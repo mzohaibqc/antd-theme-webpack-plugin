@@ -6,8 +6,8 @@ class AntDesignThemePlugin {
     const defaulOptions = {
       varFile: path.join(__dirname, '../../src/styles/variables.less'),
       mainLessFile: path.join(__dirname, '../../src/styles/index.less'),
-      stylesDir: path.join(__dirname, '../../src/styles'),
       antDir: path.join(__dirname, '../../node_modules/antd'),
+      stylesDir: path.join(__dirname, '../../src/styles/antd'),
       themeVariables: ['@primary-color'],
       indexFileName: 'index.html'
     }
@@ -17,7 +17,6 @@ class AntDesignThemePlugin {
   apply(compiler) {
     const options = this.options;
     compiler.plugin('emit', function (compilation, callback) {
-      const index = compilation.assets[options.indexFileName];
       theme.generateColorLess(options).then(css => {
         const less = `
         <link rel="stylesheet/less" type="text/css" href="/color.less" />
@@ -29,15 +28,16 @@ class AntDesignThemePlugin {
         </script>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/less.js/2.7.2/less.min.js"></script>
         `;
+        if (options.indexFileName in compilation.assets) {
+          const index = compilation.assets[options.indexFileName];
+          let content = index.source();
 
-        let content = index.source();
-
-        if (!content.match(/\/color\.less/g)) {
-          index.source = () => content.replace(less, '').replace(/<\/body>/ig, less + '</body>');
-          content = index.source();
-          index.size = () => content.length;
+          if (!content.match(/\/color\.less/g)) {
+            index.source = () => content.replace(less, '').replace(/<\/body>/ig, less + '</body>');
+            content = index.source();
+            index.size = () => content.length;
+          }
         }
-
 
         compilation.assets['color.less'] = {
           source: () => css,

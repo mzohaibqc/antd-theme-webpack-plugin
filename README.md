@@ -3,7 +3,7 @@
 This webpack plugin is to  generate color specific less/css and inject into your `index.html` file so 
 that you can change Ant Design specific color theme in browser.
 
-Live Theme Demo: https://mzohaibqc.github.io/antd-live-theme/
+Live Theme Demo: https://antd-live-theme.firebaseapp.com/
 
 In order to integrate with your webpack configurations, install the package and add following code in your webpack config file.
 
@@ -11,10 +11,10 @@ In order to integrate with your webpack configurations, install the package and 
 const AntDesignThemePlugin = require('antd-theme-webpack-plugin');
 
 const options = {
-  stylesDir: path.join(__dirname, './src/styles'),
   antDir: path.join(__dirname, './node_modules/antd'),
+  stylesDir: path.join(__dirname, './src/styles'),
   varFile: path.join(__dirname, './src/styles/variables.less'),
-  mainLessFile: path.join(__dirname, '../../src/styles/index.less'),
+  mainLessFile: path.join(__dirname, './src/styles/index.less'),
   themeVariables: ['@primary-color'],
   indexFileName: 'index.html'
 }
@@ -30,10 +30,10 @@ Add this plugin in `plugins` array.
 - Here are some default paths.
 - Default html file name
   - index.html
-- Styles directory default path
-  - /src/styles
 - Ant Design deafult path
   - /node_modules/antd
+- Default styles directory
+  - /src/styles
 - Default variables file path
   - /src/styles/variables.less
 - Default styles main file path

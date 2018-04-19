@@ -223,7 +223,8 @@ function generateColorLess(options) {
     - entry - Ant Design less main file / entry file
     - styles - Ant Design less styles for each component
   */
-    const antd = options.antDir || path.resolve(__dirname, '../antd/');
+    const antd = options.antDir;
+    const stylesDir = options.stylesDir;
     const entry = path.join(antd, 'lib/style/index.less');
     const styles = glob.sync(path.join(antd, 'lib/*/style/index.less'));
 
@@ -233,14 +234,9 @@ function generateColorLess(options) {
       - stylesDir - styles directory containing all less files 
       - indexFile - less main file which imports all other custom styles
       - varFile - variable file containing ant design specific and your own custom variables
-      - themeFile - file containing only color related variables that you want to change at runtime
-      - colorFile - output file containing only color related css rules which needs to be imported in `index.html`
     */
-    const stylesDir = options.stylesDir || path.resolve(__dirname, '../../src/styles/');
-    const indexFile = options.mainLessFile || path.join(stylesDir, './index.less');
-    const varFile = path.join(stylesDir, './variables.less');
-    const themeFile = path.join(stylesDir, './theme.less');
-    const colorFile = options.colorFile || path.join(__dirname, '../../public/color.less');
+    const indexFile = options.mainLessFile;
+    const varFile = options.varFile;
     const customStyles = fs.readFileSync(indexFile).toString();
 
     let content = fs.readFileSync(entry).toString();
