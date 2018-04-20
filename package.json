@@ -1,6 +1,6 @@
 {
   "name": "antd-theme-webpack-plugin",
-  "version": "1.0.5",
+  "version": "1.0.7",
   "description": "A webpack plugin to provide Dynamic Theme for Ant Design",
   "main": "index.js",
   "scripts": {
