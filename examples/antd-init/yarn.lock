@@ -135,9 +135,9 @@ ansi-styles@^3.2.1:
   dependencies:
     color-convert "^1.9.0"
 
-antd-theme-webpack-plugin@^1.0.5:
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/antd-theme-webpack-plugin/-/antd-theme-webpack-plugin-1.0.5.tgz#ebabc3339a9b3c40f18006b8bec3fb007d76f54e"
+antd-theme-webpack-plugin@^1.0.8:
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/antd-theme-webpack-plugin/-/antd-theme-webpack-plugin-1.0.8.tgz#ce9b245f54b096e66f5abf018134f07488068e2a"
   dependencies:
     antd "^3.4.0"
     less "^3.0.1"
