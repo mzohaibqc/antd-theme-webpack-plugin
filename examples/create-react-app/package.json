@@ -18,7 +18,7 @@
     "eject": "react-scripts eject"
   },
   "devDependencies": {
-    "antd-theme-webpack-plugin": "1.0.8",
+    "antd-theme-webpack-plugin": "1.1.0",
     "react-app-rewired": "^1.5.0"
   }
 }

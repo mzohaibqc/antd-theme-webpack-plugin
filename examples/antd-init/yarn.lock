@@ -135,16 +135,24 @@ ansi-styles@^3.2.1:
   dependencies:
     color-convert "^1.9.0"
 
-antd-theme-webpack-plugin@^1.0.8:
-  version "1.0.8"
-  resolved "https://registry.yarnpkg.com/antd-theme-webpack-plugin/-/antd-theme-webpack-plugin-1.0.8.tgz#ce9b245f54b096e66f5abf018134f07488068e2a"
+antd-theme-generator@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/antd-theme-generator/-/antd-theme-generator-1.0.1.tgz#7451c527c953b6d23dd49c1bee29fd2f01ab2a7a"
   dependencies:
-    antd "^3.4.0"
     less "^3.0.1"
     less-bundle-promise "1.0.4"
     postcss "^6.0.21"
 
-antd@^3.0.0, antd@^3.4.0:
+antd-theme-webpack-plugin@1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/antd-theme-webpack-plugin/-/antd-theme-webpack-plugin-1.1.0.tgz#cbcb6ba907175966bcde3827a8a01c4d17a039f2"
+  dependencies:
+    antd-theme-generator "^1.0.1"
+    less "^3.0.1"
+    less-bundle-promise "1.0.4"
+    postcss "^6.0.21"
+
+antd@^3.0.0:
   version "3.4.1"
   resolved "https://registry.yarnpkg.com/antd/-/antd-3.4.1.tgz#9f93c712e14d692a3db70fa3f254c79874cd3822"
   dependencies:

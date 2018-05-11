@@ -10,7 +10,8 @@ const options = {
   mainLessFile: path.join(__dirname, './src/less/main.less'),
   themeVariables: ['@primary-color', '@secondary-color', '@text-color', '@text-color-secondary',
     '@heading-color', '@bg-color'],
-  indexFileName: 'index.html'
+  indexFileName: 'index.html',
+  generateOnce: false // generate color.less on each compilation
 }
 module.exports = function override(config, env) {
   config = injectBabelPlugin(['import', { libraryName: 'antd', style: true }], config);
