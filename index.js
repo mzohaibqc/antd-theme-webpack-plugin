@@ -11,7 +11,8 @@ class AntDesignThemePlugin {
       stylesDir: path.join(__dirname, "../../src/styles/antd"),
       themeVariables: ["@primary-color"],
       indexFileName: "index.html",
-      generateOnce: false
+      generateOnce: false,
+      lessUrl: "https://cdnjs.cloudflare.com/ajax/libs/less.js/2.7.2/less.min.js"
     };
     this.options = Object.assign(defaulOptions, options);
     this.generated = false;
@@ -28,7 +29,7 @@ class AntDesignThemePlugin {
             env: 'production'
           };
         </script>
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/less.js/2.7.2/less.min.js"></script>
+        <script type="text/javascript" src="${options.lessUrl}"></script>
         `;
       if (options.indexFileName in compilation.assets) {
         const index = compilation.assets[options.indexFileName];

@@ -11,7 +11,7 @@
     "react-dom": "^16.2.0"
   },
   "devDependencies": {
-    "antd-theme-webpack-plugin": "^1.0.5",
+    "antd-theme-webpack-plugin": "^1.0.8",
     "atool-build": "^0.9.0",
     "atool-test-mocha": "^0.1.4",
     "babel-eslint": "^7.0.0",
@@ -29,9 +29,7 @@
     "pre-commit": "1.x",
     "redbox-react": "^1.2.6"
   },
-  "pre-commit": [
-    "lint"
-  ],
+  "pre-commit": ["lint"],
   "scripts": {
     "build": "atool-build",
     "lint": "eslint --ext .js,.jsx src/",
