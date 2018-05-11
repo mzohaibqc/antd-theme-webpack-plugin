@@ -16,7 +16,8 @@ const options = {
   varFile: path.join(__dirname, './src/styles/variables.less'),
   mainLessFile: path.join(__dirname, './src/styles/index.less'),
   themeVariables: ['@primary-color'],
-  indexFileName: 'index.html'
+  indexFileName: 'index.html',
+  generateOnce: false
 }
 
 const themePlugin = new AntDesignThemePlugin(options);
@@ -40,6 +41,8 @@ Add this plugin in `plugins` array.
   - /src/styles/index.less
 - Default Theme variables (that can be updated in browser)
   - ['@primary-color']
+- generateOne: false
+  - if you don't want to generate color.less on each chnage in code to make build process fast in development mode, assign it `true` value. But if you have new changes in your styles, you need to re-run your build process `npm start`.
 
 So if your directory structure is different or file names are different then provide correct paths as options 
 while initailizing plugin

@@ -1,16 +1,16 @@
 {
   "name": "antd-theme-webpack-plugin",
-  "version": "1.0.8",
+  "version": "1.1.0",
   "description": "A webpack plugin to provide Dynamic Theme for Ant Design",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "antd": "^3.4.0",
+    "antd-theme-generator": "^1.0.1",
+    "less": "^3.0.1",
     "less-bundle-promise": "1.0.4",
-    "postcss": "^6.0.21",
-    "less": "^3.0.1"
+    "postcss": "^6.0.21"
   },
   "author": {
     "name": "mzohaibqc",
