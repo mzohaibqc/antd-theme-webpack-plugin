@@ -6,12 +6,12 @@
   "dependencies": {
     "antd": "^3.0.0",
     "moment": "^2.22.1",
-    "rc-color-picker": "^1.2.6",
     "react": "^16.2.0",
+    "react-color": "^2.14.1",
     "react-dom": "^16.2.0"
   },
   "devDependencies": {
-    "antd-theme-webpack-plugin": "1.1.0",
+    "antd-theme-webpack-plugin": "1.1.2",
     "atool-build": "^0.9.0",
     "atool-test-mocha": "^0.1.4",
     "babel-eslint": "^7.0.0",

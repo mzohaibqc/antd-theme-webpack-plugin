@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import ReactDOM from "react-dom";
 import {
   Row,
@@ -15,12 +15,12 @@ import {
   message,
   Button,
   Upload,
-  DatePicker
+  DatePicker,
+  Progress
 } from "antd";
 import moment from "moment";
-import "rc-color-picker/assets/index.css";
 
-import VarColorPicker from "./VarColorPicker";
+import ColorPicker from "./ColorPicker";
 
 const { SubMenu } = Menu;
 const { Header, Content, Sider } = Layout;
@@ -32,20 +32,24 @@ const RadioGroup = Radio.Group;
 class App extends Component {
   constructor(props) {
     super(props);
-    let vars = {
-      "@primary-color": "#00375B",
-      "@secondary-color": "#0000ff",
-      "@text-color": "#000000",
-      "@text-color-secondary": "#eb2f96",
-      "@heading-color": "#fa8c16"
+    let initialValue = {
+      '@primary-color': '#1987a7',
+      '@secondary-color': '#0000ff',
+      '@text-color': '#000000',
+      '@text-color-secondary': '#eb2f96',
+      '@heading-color': '#fa8c16',
+      '@layout-header-background': '#b36e94',
+      '@btn-primary-bg': '#397dcc'
     };
+    let vars = {};
+
     try {
-      vars = JSON.parse(localStorage.getItem("app-theme"));
+      vars = Object.assign({}, initialValue, JSON.parse(localStorage.getItem('app-theme')));
     } finally {
-      this.state = { vars };
+      this.state = { vars, initialValue };
       window.less
         .modifyVars(vars)
-        .then(() => {})
+        .then(() => { })
         .catch(error => {
           message.error(`Failed to update theme`);
         });
@@ -88,21 +92,46 @@ class App extends Component {
       });
   };
 
+  getColorPicker = (varName) => (
+    <Fragment key={varName}>
+      <Col xs={20}>{varName}</Col>
+      <Col xs={4}>
+        <ColorPicker
+          type="sketch"
+          small
+          color={this.state.vars[varName]}
+          position="bottom"
+          presetColors={[
+            '#F5222D',
+            '#FA541C',
+            '#FA8C16',
+            '#FAAD14',
+            '#FADB14',
+            '#A0D911',
+            '#52C41A',
+            '#13C2C2',
+            '#1890FF',
+            '#2F54EB',
+            '#722ED1',
+            '#EB2F96',
+          ]}
+          onChangeComplete={color => this.handleColorChange(varName, color)}
+        />
+      </Col>
+    </Fragment>
+  )
+  resetTheme = () => {
+    localStorage.setItem('app-theme', '{}');
+    this.setState({ vars: this.state.initialValue });
+    window.less
+      .modifyVars(this.state.initialValue)
+      .catch(error => {
+        message.error(`Failed to reset theme`);
+      });
+  }
+
   render() {
-    const colorPickers = Object.keys(this.state.vars).reduce(
-      (prev, varName) => {
-        prev[varName] = (
-          <VarColorPicker
-            key={varName}
-            defaultColor={this.state.vars[varName]}
-            varName={varName}
-            onChangeComplete={this.onChangeComplete}
-          />
-        );
-        return prev;
-      },
-      {}
-    );
+    const colorPickers = Object.keys(this.state.vars).map(varName => this.getColorPicker(varName));
     const { getFieldDecorator } = this.props.form;
     const formItemLayout = {
       labelCol: { span: 6 },
@@ -132,7 +161,7 @@ class App extends Component {
               </Row>
             </Header>
             <Layout>
-              <Sider width={200} style={{ background: "#fff" }}>
+              <Sider width={200}>
                 <Menu
                   mode="inline"
                   defaultSelectedKeys={["1"]}
@@ -198,24 +227,21 @@ class App extends Component {
                     <Col xs={24} sm={6}>
                       <Card title="Theme" style={{ width: 300 }}>
                         <Row>
-                          <Col xs={16}>Primary Color</Col>
-                          <Col xs={8}>{colorPickers["@primary-color"]}</Col>
-                          <Col xs={16}>Text Color</Col>
-                          <Col xs={8}>{colorPickers["@text-color"]}</Col>
-                          <Col xs={16}>Text Secondary Color</Col>
-                          <Col xs={8}>
-                            {colorPickers["@text-color-secondary"]}
-                          </Col>
-                          <Col xs={16}>Headings Color</Col>
-                          <Col xs={8}>{colorPickers["@heading-color"]}</Col>
-                          <Col xs={16}>Custom Color Variable</Col>
-                          <Col xs={8}>{colorPickers["@secondary-color"]}</Col>
-                          <Col xs={24}>
+                          {colorPickers}
+                          {/* <Col xs={24}>
                             <Button
                               type="primary"
                               onClick={() => this.handleColorChange()}
                             >
                               Change Theme
+                            </Button>
+                          </Col> */}
+                          <Col xs={24} style={{ marginTop: '10px' }}>
+                            <Button
+                              type="primary"
+                              onClick={this.resetTheme}
+                            >
+                              Reset Theme
                             </Button>
                           </Col>
                         </Row>
@@ -281,6 +307,7 @@ class App extends Component {
                               </RadioGroup>
                             )}
                           </FormItem>
+                          <Progress percent={60} />
                         </Col>
                         <Col xs={24} sm={12}>
                           <FormItem {...formItemLayout} label="Date">
@@ -305,11 +332,14 @@ class App extends Component {
                             )}
                           </FormItem>
                           <FormItem wrapperCol={{ span: 12, offset: 6 }}>
-                            <Button type="default">Cancel</Button>{" "}
+                            <Button type="default">Cancel</Button>
                             <Button type="primary" htmlType="submit">
                               Submit
                             </Button>
                           </FormItem>
+                          <Row type="flex" justify="center" className="secondary-color">
+                            color : @secondary-color;
+                          </Row>
                         </Col>
                       </Form>
                     </Col>

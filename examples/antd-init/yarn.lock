@@ -135,19 +135,19 @@ ansi-styles@^3.2.1:
   dependencies:
     color-convert "^1.9.0"
 
-antd-theme-generator@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/antd-theme-generator/-/antd-theme-generator-1.0.1.tgz#7451c527c953b6d23dd49c1bee29fd2f01ab2a7a"
+antd-theme-generator@1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/antd-theme-generator/-/antd-theme-generator-1.0.3.tgz#2a5f294d16453503b84628b6969ed0f4789ef90e"
   dependencies:
     less "^3.0.1"
     less-bundle-promise "1.0.4"
     postcss "^6.0.21"
 
-antd-theme-webpack-plugin@1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/antd-theme-webpack-plugin/-/antd-theme-webpack-plugin-1.1.0.tgz#cbcb6ba907175966bcde3827a8a01c4d17a039f2"
+antd-theme-webpack-plugin@1.1.2:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/antd-theme-webpack-plugin/-/antd-theme-webpack-plugin-1.1.2.tgz#321250becf66c5a976cd1c2bd946282fb03d7913"
   dependencies:
-    antd-theme-generator "^1.0.1"
+    antd-theme-generator "1.0.3"
     less "^3.0.1"
     less-bundle-promise "1.0.4"
     postcss "^6.0.21"
@@ -3547,6 +3547,10 @@ lodash@^4.0.0, lodash@^4.1.0, lodash@^4.14.0, lodash@^4.16.5, lodash@^4.17.4, lo
   version "4.17.5"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.5.tgz#99a92d65c0272debe8c96b6057bc8fbfa3bed511"
 
+lodash@^4.0.1:
+  version "4.17.10"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.10.tgz#1b7793cf7259ea38fb3661d4d38b3260af8ae4e7"
+
 log-symbols@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/log-symbols/-/log-symbols-1.0.2.tgz#376ff7b58ea3086a0f09facc74617eca501e1a18"
@@ -3583,6 +3587,10 @@ map-json-webpack-plugin@~1.2.0:
   resolved "https://registry.yarnpkg.com/map-json-webpack-plugin/-/map-json-webpack-plugin-1.2.0.tgz#85d42e66355500e72e4f52bac05947cb6d581196"
   dependencies:
     fs-extra "~0.26.2"
+
+material-colors@^1.2.1:
+  version "1.2.5"
+  resolved "https://registry.yarnpkg.com/material-colors/-/material-colors-1.2.5.tgz#5292593e6754cb1bcc2b98030e4e0d6a3afc9ea1"
 
 math-expression-evaluator@^1.2.14:
   version "1.2.17"
@@ -4607,16 +4615,6 @@ rc-collapse@~1.8.0:
     prop-types "^15.5.6"
     rc-animate "2.x"
 
-rc-color-picker@^1.2.6:
-  version "1.2.6"
-  resolved "https://registry.yarnpkg.com/rc-color-picker/-/rc-color-picker-1.2.6.tgz#6cd516e46c6dd6f60a192590e1dc6080032b246d"
-  dependencies:
-    classnames "^2.2.5"
-    prop-types "^15.5.8"
-    rc-trigger "1.x"
-    rc-util "^4.0.2"
-    tinycolor2 "^1.4.1"
-
 rc-dialog@~7.1.0:
   version "7.1.4"
   resolved "https://registry.yarnpkg.com/rc-dialog/-/rc-dialog-7.1.4.tgz#240c67461d875e49f5d3dd1677351963bcce790a"
@@ -4857,17 +4855,6 @@ rc-tree@~1.8.0:
     rc-util "^4.0.4"
     warning "^3.0.0"
 
-rc-trigger@1.x:
-  version "1.11.5"
-  resolved "https://registry.yarnpkg.com/rc-trigger/-/rc-trigger-1.11.5.tgz#f88f9f84e0e79f8e0ef1c8d1bf8ac2208b715620"
-  dependencies:
-    babel-runtime "6.x"
-    create-react-class "15.x"
-    prop-types "15.x"
-    rc-align "2.x"
-    rc-animate "2.x"
-    rc-util "4.x"
-
 rc-trigger@^2.2.0, rc-trigger@^2.2.2, rc-trigger@^2.3.0:
   version "2.3.4"
   resolved "https://registry.yarnpkg.com/rc-trigger/-/rc-trigger-2.3.4.tgz#389dfa5e834ecc3a446fe9cefc0b4a32900f4227"
@@ -4887,7 +4874,7 @@ rc-upload@~2.4.0:
     prop-types "^15.5.7"
     warning "2.x"
 
-rc-util@4.x, rc-util@^4.0.2, rc-util@^4.0.4, rc-util@^4.1.0, rc-util@^4.1.1, rc-util@^4.3.0, rc-util@^4.4.0, rc-util@^4.5.0:
+rc-util@^4.0.4, rc-util@^4.1.0, rc-util@^4.1.1, rc-util@^4.3.0, rc-util@^4.4.0, rc-util@^4.5.0:
   version "4.5.0"
   resolved "https://registry.yarnpkg.com/rc-util/-/rc-util-4.5.0.tgz#3183e6ec806f382efb2d3e85770d95875fa6180f"
   dependencies:
@@ -4904,6 +4891,16 @@ rc@^1.1.7:
     ini "~1.3.0"
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
+
+react-color@^2.14.1:
+  version "2.14.1"
+  resolved "https://registry.yarnpkg.com/react-color/-/react-color-2.14.1.tgz#db8ad4f45d81e74896fc2e1c99508927c6d084e0"
+  dependencies:
+    lodash "^4.0.1"
+    material-colors "^1.2.1"
+    prop-types "^15.5.10"
+    reactcss "^1.2.0"
+    tinycolor2 "^1.4.1"
 
 react-dom@^16.2.0:
   version "16.3.2"
@@ -4946,6 +4943,12 @@ react@^16.2.0:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
     prop-types "^15.6.0"
+
+reactcss@^1.2.0:
+  version "1.2.3"
+  resolved "https://registry.yarnpkg.com/reactcss/-/reactcss-1.2.3.tgz#c00013875e557b1cf0dfd9a368a1c3dab3b548dd"
+  dependencies:
+    lodash "^4.0.1"
 
 read-file-stdin@^0.2.0:
   version "0.2.1"
