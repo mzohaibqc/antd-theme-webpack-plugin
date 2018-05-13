@@ -17,9 +17,9 @@ ansi-styles@^3.2.1:
   dependencies:
     color-convert "^1.9.0"
 
-antd-theme-generator@1.0.3:
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/antd-theme-generator/-/antd-theme-generator-1.0.3.tgz#2a5f294d16453503b84628b6969ed0f4789ef90e"
+antd-theme-generator@1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/antd-theme-generator/-/antd-theme-generator-1.0.4.tgz#efebf0163c64ae0fd49357d7d534169805b79a2e"
   dependencies:
     less "^3.0.1"
     less-bundle-promise "1.0.4"
