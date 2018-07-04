@@ -1,6 +1,5 @@
-const { generateTheme } = require('antd-theme-generator');
-const path = require('path');
-
+const { generateTheme } = require("antd-theme-generator");
+const path = require("path");
 
 class AntDesignThemePlugin {
   constructor(options) {
@@ -12,7 +11,9 @@ class AntDesignThemePlugin {
       themeVariables: ["@primary-color"],
       indexFileName: "index.html",
       generateOnce: false,
-      lessUrl: "https://cdnjs.cloudflare.com/ajax/libs/less.js/2.7.2/less.min.js"
+      lessUrl:
+        "https://cdnjs.cloudflare.com/ajax/libs/less.js/2.7.2/less.min.js",
+      publicPath: ""
     };
     this.options = Object.assign(defaulOptions, options);
     this.generated = false;
@@ -20,9 +21,9 @@ class AntDesignThemePlugin {
 
   apply(compiler) {
     const options = this.options;
-    compiler.plugin("emit", function (compilation, callback) {
+    compiler.plugin("emit", function(compilation, callback) {
       const less = `
-    <link rel="stylesheet/less" type="text/css" href="/color.less" />
+    <link rel="stylesheet/less" type="text/css" href="${options.publicPath}/color.less" />
     <script>
       window.less = {
         async: false,
@@ -31,7 +32,10 @@ class AntDesignThemePlugin {
     </script>
     <script type="text/javascript" src="${options.lessUrl}"></script>
         `;
-      if (options.indexFileName && options.indexFileName in compilation.assets) {
+      if (
+        options.indexFileName &&
+        options.indexFileName in compilation.assets
+      ) {
         const index = compilation.assets[options.indexFileName];
         let content = index.source();
 
@@ -49,16 +53,17 @@ class AntDesignThemePlugin {
         };
         return callback();
       }
-      generateTheme(options).then(css => {
-        if (options.generateOnce) {
-          this.colors = css;
-        }
-        compilation.assets["color.less"] = {
-          source: () => css,
-          size: () => css.length
-        };
-        callback();
-      })
+      generateTheme(options)
+        .then(css => {
+          if (options.generateOnce) {
+            this.colors = css;
+          }
+          compilation.assets["color.less"] = {
+            source: () => css,
+            size: () => css.length
+          };
+          callback();
+        })
         .catch(err => {
           callback(err);
         });
