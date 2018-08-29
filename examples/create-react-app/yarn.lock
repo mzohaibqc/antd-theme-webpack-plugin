@@ -157,21 +157,22 @@ ansi-styles@^3.0.0, ansi-styles@^3.2.1:
   dependencies:
     color-convert "^1.9.0"
 
-antd-theme-generator@1.0.6:
-  version "1.0.6"
-  resolved "https://registry.yarnpkg.com/antd-theme-generator/-/antd-theme-generator-1.0.6.tgz#e98fb61465dff132617ee95613b646cfc5ab0f3c"
+antd-theme-generator@1.1.3:
+  version "1.1.3"
+  resolved "https://registry.yarnpkg.com/antd-theme-generator/-/antd-theme-generator-1.1.3.tgz#9e41a7e7558677edfe1920be53d9ea74ecf67f4d"
   dependencies:
+    hash.js "^1.1.5"
     less "^2.7.2"
-    less-bundle-promise "1.0.4"
+    less-bundle-promise "1.0.7"
+    less-plugin-npm-import "^2.1.0"
     postcss "^6.0.21"
 
-antd-theme-webpack-plugin@1.1.5:
-  version "1.1.5"
-  resolved "https://registry.yarnpkg.com/antd-theme-webpack-plugin/-/antd-theme-webpack-plugin-1.1.5.tgz#be80fe29fe1817a997cef76a6b8e11607b3abac7"
+"antd-theme-webpack-plugin@file:../../antd-theme-webpack-plugin-1.1.7.tgz":
+  version "1.1.7"
+  resolved "file:../../antd-theme-webpack-plugin-1.1.7.tgz#7e283905b0f263bcfc1aecceade265a154485851"
   dependencies:
-    antd-theme-generator "1.0.6"
-    less "^2.7.2"
-    less-bundle-promise "1.0.4"
+    antd-theme-generator "1.1.3"
+    less-bundle-promise "1.0.7"
     postcss "^6.0.21"
 
 antd@^3.4.1:
@@ -3330,6 +3331,13 @@ hash.js@^1.0.0, hash.js@^1.0.3:
     inherits "^2.0.3"
     minimalistic-assert "^1.0.0"
 
+hash.js@^1.1.5:
+  version "1.1.5"
+  resolved "https://registry.yarnpkg.com/hash.js/-/hash.js-1.1.5.tgz#e38ab4b85dfb1e0c40fe9265c0e9b54854c23812"
+  dependencies:
+    inherits "^2.0.3"
+    minimalistic-assert "^1.0.1"
+
 hawk@3.1.3, hawk@~3.1.3:
   version "3.1.3"
   resolved "https://registry.yarnpkg.com/hawk/-/hawk-3.1.3.tgz#078444bd7c1640b0fe540d2c9b73d59678e8e1c4"
@@ -4409,9 +4417,9 @@ lcid@^1.0.0:
   dependencies:
     invert-kv "^1.0.0"
 
-less-bundle-promise@1.0.4:
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/less-bundle-promise/-/less-bundle-promise-1.0.4.tgz#680b07bf2396feffff26fe51f91b2415ccaa2c79"
+less-bundle-promise@1.0.7:
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/less-bundle-promise/-/less-bundle-promise-1.0.7.tgz#198d7991ac4f5f3c7862fac1074c7b9aca7b9cb2"
 
 less-loader@^4.0.5:
   version "4.1.0"
@@ -4420,6 +4428,13 @@ less-loader@^4.0.5:
     clone "^2.1.1"
     loader-utils "^1.1.0"
     pify "^3.0.0"
+
+less-plugin-npm-import@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/less-plugin-npm-import/-/less-plugin-npm-import-2.1.0.tgz#823e6986c93318a98171ca858848b6bead55bf3e"
+  dependencies:
+    promise "~7.0.1"
+    resolve "~1.1.6"
 
 less@^2.7.2, less@^2.7.3:
   version "2.7.3"
@@ -4770,7 +4785,7 @@ mini-store@^1.0.2:
     prop-types "^15.6.0"
     shallowequal "^1.0.2"
 
-minimalistic-assert@^1.0.0:
+minimalistic-assert@^1.0.0, minimalistic-assert@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/minimalistic-assert/-/minimalistic-assert-1.0.1.tgz#2e194de044626d4a10e7f7fbc00ce73e83e4d5c7"
 
@@ -5709,6 +5724,12 @@ promise@^7.1.1:
   dependencies:
     asap "~2.0.3"
 
+promise@~7.0.1:
+  version "7.0.4"
+  resolved "https://registry.yarnpkg.com/promise/-/promise-7.0.4.tgz#363e84a4c36c8356b890fed62c91ce85d02ed539"
+  dependencies:
+    asap "~2.0.3"
+
 prop-types@15.x, prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.5.6, prop-types@^15.5.7, prop-types@^15.5.8, prop-types@^15.5.9, prop-types@^15.6.0:
   version "15.6.1"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.6.1.tgz#36644453564255ddda391191fb3a125cbdf654ca"
@@ -6600,7 +6621,7 @@ resolve-url@^0.2.1:
   version "0.2.1"
   resolved "https://registry.yarnpkg.com/resolve-url/-/resolve-url-0.2.1.tgz#2c637fe77c893afd2a663fe21aa9080068e2052a"
 
-resolve@1.1.7:
+resolve@1.1.7, resolve@~1.1.6:
   version "1.1.7"
   resolved "https://registry.yarnpkg.com/resolve/-/resolve-1.1.7.tgz#203114d82ad2c5ed9e8e0411b3932875e889e97b"
 

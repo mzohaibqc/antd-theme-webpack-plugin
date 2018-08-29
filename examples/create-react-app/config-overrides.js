@@ -28,7 +28,8 @@ module.exports = function override(config, env) {
       '@primary-color': '#00375B',
       '@text-color-secondary': '#eb2f96',
       '@heading-color': '#fa8c16'
-    }
+    },
+    enableJavascript: true
   })(config, env);
   config.plugins.push(new AntDesignThemePlugin(options));
   return config;

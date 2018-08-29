@@ -143,9 +143,9 @@ antd-theme-generator@1.0.6:
     less-bundle-promise "1.0.4"
     postcss "^6.0.21"
 
-antd-theme-webpack-plugin@1.1.5:
-  version "1.1.5"
-  resolved "https://registry.yarnpkg.com/antd-theme-webpack-plugin/-/antd-theme-webpack-plugin-1.1.5.tgz#be80fe29fe1817a997cef76a6b8e11607b3abac7"
+antd-theme-webpack-plugin@^1.1.6:
+  version "1.1.6"
+  resolved "https://registry.yarnpkg.com/antd-theme-webpack-plugin/-/antd-theme-webpack-plugin-1.1.6.tgz#7deb195b9f9d92da9334ebc1f3d74d8bed4cbed6"
   dependencies:
     antd-theme-generator "1.0.6"
     less "^2.7.2"
