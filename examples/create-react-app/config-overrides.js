@@ -16,7 +16,8 @@ const options = {
     '@heading-color',
     '@layout-body-background',
     '@btn-primary-bg',
-    '@layout-header-background'
+    '@layout-header-background',
+    '@border-color-base'
   ],
   indexFileName: 'index.html',
   generateOnce: false // generate color.less on each compilation
