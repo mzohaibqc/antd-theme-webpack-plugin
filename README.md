@@ -7,6 +7,9 @@ Live Theme Demo: https://antd-live-theme.firebaseapp.com/
 
 In order to integrate with your webpack configurations, install the package and add following code in your webpack config file.
 
+## Install
+  - npm install -D antd-theme-webpack-plugin
+
 ```js
 const AntDesignThemePlugin = require('antd-theme-webpack-plugin');
 
