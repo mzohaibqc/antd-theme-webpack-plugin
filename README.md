@@ -82,7 +82,7 @@ You need to enable javascript for less-loader.
 
 ```
 {
-  enableJavascript: true
+  javascriptEnabled: true
 }
 
 ```
@@ -96,7 +96,7 @@ module.exports = function override(config, env) {
     modifyVars: {
       '@primary-color': '#002251'
     },
-    enableJavascript: true
+    javascriptEnabled: true
   })(config, env);
   config.plugins.push(new AntDesignThemePlugin(options));
   return config;

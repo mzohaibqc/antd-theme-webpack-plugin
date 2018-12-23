@@ -30,7 +30,7 @@ module.exports = function override(config, env) {
       '@text-color-secondary': '#eb2f96',
       '@heading-color': '#fa8c16'
     },
-    enableJavascript: true
+    javascriptEnabled: true
   })(config, env);
   config.plugins.push(new AntDesignThemePlugin(options));
   return config;
