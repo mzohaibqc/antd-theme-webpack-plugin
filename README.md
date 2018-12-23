@@ -44,7 +44,7 @@ Add this plugin in `plugins` array.
   - /src/styles/index.less
 - Default Theme variables (that can be updated in browser)
   - ['@primary-color']
-- generateOne: false
+- generateOnce: false
   - if you don't want to generate color.less on each chnage in code to make build process fast in development mode, assign it `true` value. But if you have new changes in your styles, you need to re-run your build process `npm start`.
 
 So if your directory structure is different or file names are different then provide correct paths as options 
