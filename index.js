@@ -21,7 +21,7 @@ class AntDesignThemePlugin {
 
   apply(compiler) {
     const options = this.options;
-    compiler.plugin("emit", function(compilation, callback) {
+    compiler.plugin("emit", (compilation, callback) => {
       const less = `
     <link rel="stylesheet/less" type="text/css" href="${options.publicPath}/color.less" />
     <script>
