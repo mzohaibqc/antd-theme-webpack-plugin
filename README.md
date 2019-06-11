@@ -20,7 +20,9 @@ const options = {
   mainLessFile: path.join(__dirname, './src/styles/index.less'),
   themeVariables: ['@primary-color'],
   indexFileName: 'index.html',
-  generateOnce: false
+  generateOnce: false,
+  lessUrl: "https://cdnjs.cloudflare.com/ajax/libs/less.js/2.7.2/less.min.js",
+  publicPath: ""
 }
 
 const themePlugin = new AntDesignThemePlugin(options);
