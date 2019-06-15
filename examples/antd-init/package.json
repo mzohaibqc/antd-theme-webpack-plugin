@@ -11,7 +11,7 @@
     "react-dom": "^16.2.0"
   },
   "devDependencies": {
-    "antd-theme-webpack-plugin": "^1.1.9",
+    "antd-theme-webpack-plugin": "^1.2.1",
     "atool-build": "^0.9.0",
     "atool-test-mocha": "^0.1.4",
     "babel-eslint": "^7.0.0",
