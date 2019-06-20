@@ -21,7 +21,7 @@ class AntDesignThemePlugin {
 
   apply(compiler) {
     const options = this.options;
-    compiler.plugin("emit", (compilation, callback) => {
+    compiler.hooks.emit.tapAsync('AntDesignThemePlugin', (compilation, callback) => {
       const less = `
     <link rel="stylesheet/less" type="text/css" href="${options.publicPath}/color.less" />
     <script>
