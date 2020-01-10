@@ -22,7 +22,8 @@ const options = {
   indexFileName: 'index.html',
   generateOnce: false,
   lessUrl: "https://cdnjs.cloudflare.com/ajax/libs/less.js/2.7.2/less.min.js",
-  publicPath: ""
+  publicPath: "",
+  customColorRegexArray: [], // An array of regex codes to match your custom color variable values so that code can identify that it's a valid color. Make sure your regex does not adds false positives.
 }
 
 const themePlugin = new AntDesignThemePlugin(options);
@@ -48,6 +49,8 @@ Add this plugin in `plugins` array.
   - ['@primary-color']
 - generateOnce: false
   - if you don't want to generate color.less on each chnage in code to make build process fast in development mode, assign it `true` value. But if you have new changes in your styles, you need to re-run your build process `npm start`.
+- customColorRegexArray: [/^fade\(.*\)$/]
+  - An array of regex codes to match your custom color variable values so that code can identify that it's a valid color. Make sure your regex does not adds false positives.
 
 So if your directory structure is different or file names are different then provide correct paths as options 
 while initailizing plugin
@@ -89,6 +92,10 @@ You need to enable javascript for less-loader.
 
 ```
 
+## Note: include all color variables in `varFile` that you want to change dynamically and assign them unique color codes. Don't assign same color to two or more variables and don't use `#fff`, `#ffffff`, `#000` or `#000000`. If you still want white or black color as default, slightly change it e.g. `#fffffe` or `#000001` which will not replace common background colors from other components. 
+
+## If you variables have some custom color code like `fade(@primary-color, 20%)` or something that does not matches with common regex to match a valid color then add your custom regex array as `customColorRegexArray` variable in options object while executing `generateTheme(options)`.
+
 For those who are using `react-app-rewire-less` with `react-app-rewired`, enable javascript like this
 
 ```
@@ -106,6 +113,9 @@ module.exports = function override(config, env) {
 ```
 
 # Changes
+
+## [1.3.1] - 2020-01-10 (latest)
+- Added a custom option, an array of regex to allow your custom color codes to match like `fade(@primary-color, 20%)`
 
 ## v1.1.8
 - Added support for webpack specific less imports so you can now import like this `@import "~antd/lib/style/themes/default.less";` instead of `@import "../../node_modules/antd/lib/style/themes/default.less";`

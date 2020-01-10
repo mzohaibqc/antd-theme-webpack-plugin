@@ -1,7 +1,10 @@
 # Changelog
 This document contains changes in this plugin with each version change.
 
-## [1.3.0] - 2019-06-21 (latest)
+## [1.3.1] - 2020-01-10 (latest)
+- Added a custom option, an array of regex to allow your custom color codes to match like `fade(@primary-color, 20%)`
+
+## [1.3.0] - 2019-06-21
 - Updated code to use new webpack plugin api using hooks.
 - Fixed issue (Feature) [27](https://github.com/mzohaibqc/antd-theme-webpack-plugin/issues/27)
 - No functionality change
