@@ -1,7 +1,13 @@
 # Changelog
 This document contains changes in this plugin with each version change.
 
-## [1.3.2] - 2020-04-25 (latest)
+
+## [1.3.3] - 2020-04-25 (latest)
+- Added code to remove statements with value containing url like `background: url('some url')`  in color.less file
+- Here is detail about the issue: https://github.com/mzohaibqc/antd-theme-generator/issues/38
+  
+
+## [1.3.2] - 2020-04-25
 - Added code to remove background-image url in color.less file
 - Here is detail about the issue: https://github.com/mzohaibqc/antd-theme-generator/issues/8
 
