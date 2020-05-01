@@ -112,6 +112,18 @@ module.exports = function override(config, env) {
 };
 ```
 
+## Configurations using customize-cra
+https://github.com/mzohaibqc/antd-theme-webpack-plugin/blob/master/examples/customize-cra/config-overrides.js
+
+## Light/Dark Theme Switch
+Here is a demo to switch between light and dark themes dynamically.
+https://mzohaibqc.github.io/antd-theme-webpack-plugin/index.html
+
+And here is code for this demo
+https://github.com/mzohaibqc/antd-theme-webpack-plugin/tree/master/examples/customize-cra
+
+Note: you don't necessarily
+
 # Changes
 
 ## [1.3.1] - 2020-01-10 (latest)
