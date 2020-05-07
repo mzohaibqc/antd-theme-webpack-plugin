@@ -243,6 +243,11 @@ class App extends Component {
                       onSelect={value => {
                         let vars = value === 'light' ? lightVars : darkVars;
                         vars = { ...vars, '@white': '#fff', '@black': '#000' };
+                        if (value === 'light') {
+                          vars['@select-item-selected-option-color'] = vars['@text-color'];
+                        } else {
+                          vars['@select-item-selected-option-color'] = vars['@primary-color'];
+                        }
                         this.setState({ vars });
                         window.less.modifyVars(vars).catch(error => {
                           message.error(`Failed to reset theme`);
