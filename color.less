@@ -7,6 +7,7 @@
 @btn-primary-bg: #1890ff;
 @layout-header-background: #001529;
 @border-color-base: hsv(0, 0, 85%);
+@select-item-selected-option-color: #123456;
 @popover-background: #fff;
 @body-background: #fff;
 @component-background: #fff;
@@ -2547,11 +2548,18 @@ this.tinycolor = tinycolor;
 
 
 
+
 .dashboard {
   color: @input-icon-hover-color;
 }
+.secondary {
+  color: @comment-author-time-color;
+}
 .dashboard {
   color: @input-icon-hover-color;
+}
+.secondary {
+  color: @comment-author-time-color;
 }
 .app .ant-layout-header .logo {
   color: #ffffff;
@@ -2561,6 +2569,9 @@ this.tinycolor = tinycolor;
 }
 .app > .ant-layout-content .ant-layout-content {
   background-color: @mentions-dropdown-bg;
+}
+.ant-select-item-option-selected:not(.ant-select-item-option-disabled) {
+  color: @select-item-selected-option-color;
 }
 html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
@@ -8904,6 +8915,9 @@ h4.ant-typography,
 .dashboard {
   color: @input-icon-hover-color;
 }
+.secondary {
+  color: @comment-author-time-color;
+}
 .app .ant-layout-header .logo {
   color: #ffffff;
 }
@@ -8913,6 +8927,10 @@ h4.ant-typography,
 .app > .ant-layout-content .ant-layout-content {
   background-color: @mentions-dropdown-bg;
 }
+.ant-select-item-option-selected:not(.ant-select-item-option-disabled) {
+  color: @select-item-selected-option-color;
+}
+
 
 
 
