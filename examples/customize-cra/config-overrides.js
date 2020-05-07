@@ -25,6 +25,7 @@ const options = {
     "@btn-primary-bg",
     "@layout-header-background",
     "@border-color-base",
+    '@select-item-selected-option-color',
     ...Object.keys(darkVars),
     ...Object.keys(lightVars)
   ])),
