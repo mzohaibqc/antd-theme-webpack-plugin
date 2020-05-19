@@ -19,9 +19,9 @@ const options = {
   antDir: path.join(__dirname, './node_modules/antd'),
   varFile: path.join(__dirname, './src/styles/vars.less'),
   themeVariables: Array.from(new Set([
-    ...Object.keys(themeVariables),
     ...Object.keys(darkVars),
-    ...Object.keys(lightVars)
+    ...Object.keys(lightVars),
+    ...Object.keys(themeVariables),
   ])),
   generateOnce: false, // generate color.less on each compilation
 }
