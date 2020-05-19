@@ -1,0 +1,1365 @@
+[
+  {
+    "name": "Colors",
+    "children": [
+      {
+        "name": "@primary-color",
+        "type": "color",
+        "value": "@blue-6",
+        "desc": "全局主色"
+      },
+      {
+        "name": "@success-color",
+        "type": "color",
+        "value": "@green-6",
+        "desc": "成功色"
+      },
+      {
+        "name": "@info-color",
+        "type": "color",
+        "value": "@blue-6",
+        "desc": ""
+      },
+      {
+        "name": "@warning-color",
+        "type": "color",
+        "value": "@gold-6",
+        "desc": "警告色"
+      },
+      {
+        "name": "@error-color",
+        "type": "color",
+        "value": "@red-5",
+        "desc": "错误色"
+      },
+      {
+        "name": "@highlight-color",
+        "type": "color",
+        "value": "@red-5",
+        "desc": ""
+      },
+      {
+        "name": "@processing-color",
+        "type": "string",
+        "value": "@blue-6",
+        "desc": ""
+      },
+      {
+        "name": "@body-background",
+        "type": "color",
+        "value": "#fff",
+        "desc": "background color for <body>"
+      },
+      {
+        "name": "@component-background",
+        "type": "color",
+        "value": "#fff",
+        "desc": "base background color for most components"
+      },
+      {
+        "name": "@icon-color",
+        "type": "string",
+        "value": "inherit",
+        "desc": ""
+      },
+      {
+        "name": "@icon-color-hover",
+        "type": "color",
+        "value": "fade(@black, 75%)",
+        "desc": ""
+      },
+      {
+        "name": "@heading-color",
+        "type": "color",
+        "value": "fade(#000, 85%)",
+        "desc": "标题色"
+      },
+      {
+        "name": "@text-color",
+        "type": "color",
+        "value": "fade(@black, 65%)",
+        "desc": "主文本色"
+      },
+      {
+        "name": "@text-color-secondary",
+        "type": "color",
+        "value": "fade(@black, 45%)",
+        "desc": "次文本色"
+      },
+      {
+        "name": "@text-color-inverse",
+        "type": "color",
+        "value": "@white",
+        "desc": ""
+      },
+      {
+        "name": "@heading-color-dark",
+        "type": "color",
+        "value": "fade(@white, 100%)",
+        "desc": ""
+      },
+      {
+        "name": "@text-color-dark",
+        "type": "color",
+        "value": "fade(@white, 85%)",
+        "desc": ""
+      },
+      {
+        "name": "@text-color-secondary-dark",
+        "type": "color",
+        "value": "fade(@white, 65%)",
+        "desc": ""
+      },
+      {
+        "name": "@text-selection-bg",
+        "type": "color",
+        "value": "@primary-color",
+        "desc": ""
+      }
+    ]
+  },
+  {
+    "name": "Border color",
+    "children": [
+      {
+        "name": "@border-color-base",
+        "type": "color",
+        "value": "hsv(0, 0, 85%) ",
+        "desc": "base border outline a component"
+      },
+      {
+        "name": "@border-color-split",
+        "type": "color",
+        "value": "hsv(0, 0, 94%) ",
+        "desc": "split border inside a component"
+      },
+      {
+        "name": "@border-color-inverse",
+        "type": "string",
+        "value": "@white",
+        "desc": ""
+      }
+    ]
+  },
+  {
+    "name": "Layout",
+    "children": [
+      {
+        "name": "@layout-body-background",
+        "type": "color",
+        "value": "#f0f2f5",
+        "desc": ""
+      },
+      {
+        "name": "@layout-header-background",
+        "type": "color",
+        "value": "#001529",
+        "desc": ""
+      },
+      {
+        "name": "@layout-footer-background",
+        "type": "string",
+        "value": "@layout-body-background",
+        "desc": ""
+      },
+      {
+        "name": "@layout-sider-background",
+        "type": "string",
+        "value": "@layout-header-background",
+        "desc": ""
+      },
+      {
+        "name": "@layout-trigger-background",
+        "type": "color",
+        "value": "#002140",
+        "desc": ""
+      },
+      {
+        "name": "@layout-trigger-color",
+        "type": "color",
+        "value": "#fff",
+        "desc": ""
+      },
+      {
+        "name": "@layout-sider-background-light",
+        "type": "color",
+        "value": "#fff",
+        "desc": ""
+      },
+      {
+        "name": "@layout-trigger-background-light",
+        "type": "color",
+        "value": "#fff",
+        "desc": ""
+      },
+      {
+        "name": "@layout-trigger-color-light",
+        "type": "string",
+        "value": "@text-color",
+        "desc": ""
+      }
+    ]
+  },
+  {
+    "name": "Disabled states",
+    "children": [
+      {
+        "name": "@disabled-color",
+        "type": "color",
+        "value": "fade(#000, 25%)",
+        "desc": "失效色"
+      },
+      {
+        "name": "@disabled-bg",
+        "type": "string",
+        "value": "@background-color-base",
+        "desc": ""
+      },
+      {
+        "name": "@disabled-color-dark",
+        "type": "color",
+        "value": "fade(#fff, 35%)",
+        "desc": ""
+      }
+    ]
+  },
+  {
+    "name": "Link",
+    "children": [
+      {
+        "name": "@link-color",
+        "type": "string",
+        "value": "@primary-color",
+        "desc": "链接色"
+      }
+    ]
+  },
+  {
+    "name": "Outline",
+    "children": [
+      {
+        "name": "@outline-color",
+        "type": "string",
+        "value": "@primary-color",
+        "desc": ""
+      },
+      {
+        "name": "@background-color-light",
+        "type": "color",
+        "value": "hsv(0, 0, 98%) ",
+        "desc": "background of header and selected item"
+      },
+      {
+        "name": "@background-color-base",
+        "type": "color",
+        "value": "hsv(0, 0, 96%) ",
+        "desc": "Default grey background color"
+      }
+    ]
+  },
+  {
+    "name": "item",
+    "children": [
+      {
+        "name": "@item-active-bg",
+        "type": "string",
+        "value": "@primary-1",
+        "desc": "The background colors for active and hover states for things like list items or table cells"
+      },
+      {
+        "name": "@item-hover-bg",
+        "type": "string",
+        "value": "#f5f5f5",
+        "desc": "The background colors for active and hover states for things like list items or table cells"
+      }
+    ]
+  },
+  {
+    "name": "Shadow",
+    "children": [
+      {
+        "name": "@shadow-color",
+        "type": "color",
+        "value": "rgba(0, 0, 0, 0.15)",
+        "desc": "失效色"
+      },
+      {
+        "name": "@shadow-color-inverse",
+        "type": "string",
+        "value": "@component-background",
+        "desc": ""
+      },
+      {
+        "name": "@box-shadow-base",
+        "type": "string",
+        "value": "@shadow-2",
+        "desc": ""
+      },
+      {
+        "name": "@shadow-1-up",
+        "type": "string",
+        "value": "0 -6px 16px -8px rgba(0, 0, 0, 0.08), 0 -9px 28px 0 rgba(0, 0, 0, 0.05),",
+        "desc": ""
+      },
+      {
+        "name": "@shadow-1-down",
+        "type": "string",
+        "value": "0 6px 16px -8px rgba(0, 0, 0, 0.08), 0 9px 28px 0 rgba(0, 0, 0, 0.05),",
+        "desc": ""
+      },
+      {
+        "name": "@shadow-1-left",
+        "type": "string",
+        "value": "-6px 0 16px -8px rgba(0, 0, 0, 0.08), -9px 0 28px 0 rgba(0, 0, 0, 0.05),",
+        "desc": ""
+      },
+      {
+        "name": "@shadow-1-right",
+        "type": "string",
+        "value": "6px 0 16px -8px rgba(0, 0, 0, 0.08), 9px 0 28px 0 rgba(0, 0, 0, 0.05),",
+        "desc": ""
+      },
+      {
+        "name": "@shadow-2",
+        "type": "string",
+        "value": "0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 6px 16px 0 rgba(0, 0, 0, 0.08),",
+        "desc": ""
+      }
+    ]
+  },
+  {
+    "name": "Button",
+    "children": [
+      {
+        "name": "@btn-shadow",
+        "type": "string",
+        "value": "0 2px 0 rgba(0, 0, 0, 0.015)",
+        "desc": ""
+      },
+      {
+        "name": "@btn-primary-shadow",
+        "type": "string",
+        "value": "0 2px 0 rgba(0, 0, 0, 0.045)",
+        "desc": ""
+      },
+      {
+        "name": "@btn-text-shadow",
+        "type": "string",
+        "value": "0 -1px 0 rgba(0, 0, 0, 0.12)",
+        "desc": ""
+      },
+      {
+        "name": "@btn-primary-color",
+        "type": "color",
+        "value": "#fff",
+        "desc": ""
+      },
+      {
+        "name": "@btn-primary-bg",
+        "type": "string",
+        "value": "@primary-color",
+        "desc": ""
+      },
+      {
+        "name": "@btn-default-color",
+        "type": "string",
+        "value": "@text-color",
+        "desc": ""
+      },
+      {
+        "name": "@btn-default-bg",
+        "type": "string",
+        "value": "@component-background",
+        "desc": ""
+      },
+      {
+        "name": "@btn-default-border",
+        "type": "string",
+        "value": "@border-color-base",
+        "desc": ""
+      },
+      {
+        "name": "@btn-danger-color",
+        "type": "string",
+        "value": "#fff",
+        "desc": ""
+      },
+      {
+        "name": "@btn-danger-bg",
+        "type": "string",
+        "value": "@error-color",
+        "desc": ""
+      },
+      {
+        "name": "@btn-danger-border",
+        "type": "string",
+        "value": "@error-color",
+        "desc": ""
+      },
+      {
+        "name": "@btn-disable-color",
+        "type": "string",
+        "value": "@disabled-color",
+        "desc": ""
+      },
+      {
+        "name": "@btn-disable-bg",
+        "type": "string",
+        "value": "@disabled-bg",
+        "desc": ""
+      },
+      {
+        "name": "@btn-disable-border",
+        "type": "string",
+        "value": "@border-color-base",
+        "desc": ""
+      },
+      {
+        "name": "@btn-group-border",
+        "type": "string",
+        "value": "@primary-5",
+        "desc": ""
+      }
+    ]
+  },
+  {
+    "name": "Checkbox",
+    "children": [
+      {
+        "name": "@checkbox-color",
+        "type": "string",
+        "value": "@primary-color",
+        "desc": ""
+      },
+      {
+        "name": "@checkbox-check-color",
+        "type": "color",
+        "value": "#fff",
+        "desc": ""
+      }
+    ]
+  },
+  {
+    "name": "Dropdown",
+    "children": [
+      {
+        "name": "@dropdown-selected-color",
+        "type": "string",
+        "value": "@primary-color",
+        "desc": ""
+      }
+    ]
+  },
+  {
+    "name": "Radio",
+    "children": [
+      {
+        "name": "@radio-dot-color",
+        "type": "string",
+        "value": "@primary-color",
+        "desc": ""
+      }
+    ]
+  },
+  {
+    "name": "Radio buttons",
+    "children": [
+      {
+        "name": "@radio-dot-color",
+        "type": "string",
+        "value": "@primary-color",
+        "desc": ""
+      },
+      {
+        "name": "@radio-button-bg",
+        "type": "string",
+        "value": "@btn-default-bg",
+        "desc": ""
+      },
+      {
+        "name": "@radio-button-checked-bg",
+        "type": "string",
+        "value": "@btn-default-bg",
+        "desc": ""
+      },
+      {
+        "name": "@radio-button-color",
+        "type": "string",
+        "value": "@btn-default-color",
+        "desc": ""
+      },
+      {
+        "name": "@radio-button-hover-color",
+        "type": "string",
+        "value": "@primary-5",
+        "desc": ""
+      },
+      {
+        "name": "@radio-button-active-color",
+        "type": "string",
+        "value": "@primary-7",
+        "desc": ""
+      }
+    ]
+  },
+  {
+    "name": "Form",
+    "children": [
+      {
+        "name": "@label-required-color",
+        "type": "string",
+        "value": "@highlight-color",
+        "desc": ""
+      },
+      {
+        "name": "@label-color",
+        "type": "string",
+        "value": "@heading-color",
+        "desc": ""
+      },
+      {
+        "name": "@form-warning-input-bg",
+        "type": "string",
+        "value": "@input-bg",
+        "desc": ""
+      },
+      {
+        "name": "@form-error-input-bg",
+        "type": "string",
+        "value": "@input-bg",
+        "desc": ""
+      }
+    ]
+  },
+  {
+    "name": "Input",
+    "children": [
+      {
+        "name": "@input-placeholder-color",
+        "type": "color",
+        "value": "hsv(0, 0, 75%)",
+        "desc": ""
+      },
+      {
+        "name": "@input-color",
+        "type": "string",
+        "value": "@text-color",
+        "desc": ""
+      },
+      {
+        "name": "@input-border-color",
+        "type": "string",
+        "value": "@border-color-base",
+        "desc": ""
+      },
+      {
+        "name": "@input-bg",
+        "type": "string",
+        "value": "@component-background",
+        "desc": ""
+      },
+      {
+        "name": "@input-number-handler-active-bg",
+        "type": "color",
+        "value": "#f4f4f4",
+        "desc": ""
+      },
+      {
+        "name": "@input-addon-bg",
+        "type": "string",
+        "value": "@background-color-light",
+        "desc": ""
+      },
+      {
+        "name": "@input-hover-border-color",
+        "type": "string",
+        "value": "@primary-5",
+        "desc": ""
+      },
+      {
+        "name": "@input-disabled-bg",
+        "type": "string",
+        "value": "@disabled-bg",
+        "desc": ""
+      }
+    ]
+  },
+  {
+    "name": "Select",
+    "children": [
+      {
+        "name": "@select-border-color",
+        "type": "string",
+        "value": "@border-color-base",
+        "desc": ""
+      }
+    ]
+  },
+  {
+    "name": "Tooltip",
+    "children": [
+      {
+        "name": "@tooltip-color",
+        "type": "color",
+        "value": "#fff",
+        "desc": "Tooltip text color"
+      },
+      {
+        "name": "@tooltip-bg",
+        "type": "color",
+        "value": "rgba(0, 0, 0, 0.75)",
+        "desc": "Tooltip background color"
+      },
+      {
+        "name": "@tooltip-arrow-color",
+        "type": "string",
+        "value": "@tooltip-bg",
+        "desc": "Tooltip arrow color"
+      }
+    ]
+  },
+  {
+    "name": "Popover",
+    "children": [
+      {
+        "name": "@popover-bg",
+        "type": "string",
+        "value": "@component-background",
+        "desc": "Popover body background color"
+      },
+      {
+        "name": "@popover-color",
+        "type": "string",
+        "value": "@text-color",
+        "desc": "Popover text color"
+      },
+      {
+        "name": "@popover-arrow-color",
+        "type": "string",
+        "value": "@popover-bg",
+        "desc": "Popover arrow color"
+      },
+      {
+        "name": "@popover-arrow-outer-color",
+        "type": "string",
+        "value": "@popover-bg",
+        "desc": "Popover outer arrow color"
+      }
+    ]
+  },
+  {
+    "name": "Modal",
+    "children": [
+      {
+        "name": "@modal-header-bg",
+        "type": "string",
+        "value": "@component-background",
+        "desc": ""
+      },
+      {
+        "name": "@modal-footer-bg",
+        "type": "string",
+        "value": "transparent",
+        "desc": ""
+      },
+      {
+        "name": "@modal-mask-bg",
+        "type": "string",
+        "value": "fade(@black, 45%)",
+        "desc": ""
+      }
+    ]
+  },
+  {
+    "name": "Progress",
+    "children": [
+      {
+        "name": "@progress-default-color",
+        "type": "string",
+        "value": "@processing-color",
+        "desc": ""
+      },
+      {
+        "name": "@progress-remaining-color",
+        "type": "string",
+        "value": "@background-color-base",
+        "desc": ""
+      },
+      {
+        "name": "@progress-text-color",
+        "type": "string",
+        "value": "@text-color",
+        "desc": ""
+      }
+    ]
+  },
+  {
+    "name": "Menu",
+    "children": [
+      {
+        "name": "@menu-bg",
+        "type": "string",
+        "value": "@component-background",
+        "desc": ""
+      },
+      {
+        "name": "@menu-popup-bg",
+        "type": "string",
+        "value": "@component-background",
+        "desc": ""
+      },
+      {
+        "name": "@menu-item-color",
+        "type": "string",
+        "value": "@text-color",
+        "desc": ""
+      },
+      {
+        "name": "@menu-highlight-color",
+        "type": "string",
+        "value": "@primary-color",
+        "desc": ""
+      },
+      {
+        "name": "@menu-item-active-bg",
+        "type": "string",
+        "value": "@primary-1",
+        "desc": ""
+      },
+      {
+        "name": "@menu-item-group-title-color",
+        "type": "string",
+        "value": "@text-color-secondary",
+        "desc": ""
+      },
+      {
+        "name": "@menu-dark-color",
+        "type": "string",
+        "value": "@text-color-secondary-dark",
+        "desc": ""
+      },
+      {
+        "name": "@menu-dark-bg",
+        "type": "string",
+        "value": "@layout-header-background",
+        "desc": ""
+      },
+      {
+        "name": "@menu-dark-arrow-color",
+        "type": "color",
+        "value": "#fff",
+        "desc": ""
+      },
+      {
+        "name": "@menu-dark-submenu-bg",
+        "type": "color",
+        "value": "#000c17",
+        "desc": ""
+      },
+      {
+        "name": "@menu-dark-highlight-color",
+        "type": "color",
+        "value": "#fff",
+        "desc": ""
+      },
+      {
+        "name": "@menu-dark-item-active-bg",
+        "type": "string",
+        "value": "@primary-color",
+        "desc": ""
+      }
+    ]
+  },
+  {
+    "name": "Table",
+    "children": [
+      {
+        "name": "@table-header-bg",
+        "type": "string",
+        "value": "@background-color-light",
+        "desc": ""
+      },
+      {
+        "name": "@table-header-color",
+        "type": "string",
+        "value": "@heading-color",
+        "desc": ""
+      },
+      {
+        "name": "@table-header-sort-bg",
+        "type": "string",
+        "value": "@background-color-base",
+        "desc": ""
+      },
+      {
+        "name": "@table-body-sort-bg",
+        "type": "color",
+        "value": "rgba(0, 0, 0, 0.01)",
+        "desc": ""
+      },
+      {
+        "name": "@table-row-hover-bg",
+        "type": "string",
+        "value": "@item-hover-bg",
+        "desc": ""
+      },
+      {
+        "name": "@table-selected-row-color",
+        "type": "string",
+        "value": "inherit",
+        "desc": ""
+      },
+      {
+        "name": "@table-selected-row-bg",
+        "type": "color",
+        "value": "@primary-1",
+        "desc": ""
+      },
+      {
+        "name": "@table-body-selected-sort-bg",
+        "type": "string",
+        "value": "@table-selected-row-bg",
+        "desc": ""
+      },
+      {
+        "name": "@table-selected-row-hover-bg",
+        "type": "string",
+        "value": "@table-selected-row-bg",
+        "desc": ""
+      },
+      {
+        "name": "@table-expanded-row-bg",
+        "type": "color",
+        "value": "#fbfbfb",
+        "desc": ""
+      },
+      {
+        "name": "@table-border-radius-base",
+        "type": "string",
+        "value": "@border-radius-base",
+        "desc": ""
+      }
+    ]
+  },
+  {
+    "name": "Tag",
+    "children": [
+      {
+        "name": "@tag-default-bg",
+        "type": "string",
+        "value": "@background-color-light",
+        "desc": ""
+      },
+      {
+        "name": "@tag-default-color",
+        "type": "string",
+        "value": "@text-color",
+        "desc": ""
+      }
+    ]
+  },
+  {
+    "name": "TimePicker",
+    "children": [
+      {
+        "name": "@time-picker-selected-bg",
+        "type": "string",
+        "value": "@item-active-bg",
+        "desc": ""
+      }
+    ]
+  },
+  {
+    "name": "Badge",
+    "children": [
+      {
+        "name": "@badge-color",
+        "type": "string",
+        "value": "@error-color",
+        "desc": ""
+      },
+      {
+        "name": "@badge-text-color",
+        "type": "string",
+        "value": "@component-background",
+        "desc": ""
+      }
+    ]
+  },
+  {
+    "name": "Rate",
+    "children": [
+      {
+        "name": "@rate-star-color",
+        "type": "color",
+        "value": "@yellow-6",
+        "desc": ""
+      },
+      {
+        "name": "@rate-star-bg",
+        "type": "string",
+        "value": "@border-color-split",
+        "desc": ""
+      }
+    ]
+  },
+  {
+    "name": "Card",
+    "children": [
+      {
+        "name": "@card-head-color",
+        "type": "string",
+        "value": "@heading-color",
+        "desc": ""
+      },
+      {
+        "name": "@card-head-background",
+        "type": "string",
+        "value": "transparent",
+        "desc": ""
+      },
+      {
+        "name": "@card-actions-background",
+        "type": "string",
+        "value": "@background-color-light",
+        "desc": ""
+      },
+      {
+        "name": "@card-background",
+        "type": "color",
+        "value": "@component-background",
+        "desc": ""
+      },
+      {
+        "name": "@card-radius",
+        "type": "string",
+        "value": "@border-radius-base",
+        "desc": ""
+      }
+    ]
+  },
+  {
+    "name": "Comment",
+    "children": [
+      {
+        "name": "@comment-author-name-color",
+        "type": "string",
+        "value": "@text-color-secondary",
+        "desc": ""
+      },
+      {
+        "name": "@comment-author-time-color",
+        "type": "color",
+        "value": "#ccc",
+        "desc": ""
+      },
+      {
+        "name": "@comment-action-color",
+        "type": "string",
+        "value": "@text-color-secondary",
+        "desc": ""
+      },
+      {
+        "name": "@comment-action-hover-color",
+        "type": "color",
+        "value": "#595959",
+        "desc": ""
+      }
+    ]
+  },
+  {
+    "name": "Tabs",
+    "children": [
+      {
+        "name": "@tabs-card-head-background",
+        "type": "string",
+        "value": "@background-color-light",
+        "desc": ""
+      },
+      {
+        "name": "@tabs-card-active-color",
+        "type": "string",
+        "value": "@primary-color",
+        "desc": ""
+      },
+      {
+        "name": "@tabs-ink-bar-color",
+        "type": "string",
+        "value": "@primary-color",
+        "desc": ""
+      },
+      {
+        "name": "@tabs-highlight-color",
+        "type": "string",
+        "value": "@primary-color",
+        "desc": ""
+      },
+      {
+        "name": "@tabs-hover-color",
+        "type": "string",
+        "value": "@primary-5",
+        "desc": ""
+      },
+      {
+        "name": "@tabs-active-color",
+        "type": "string",
+        "value": "@primary-7",
+        "desc": ""
+      }
+    ]
+  },
+  {
+    "name": "BackTop",
+    "children": [
+      {
+        "name": "@back-top-color",
+        "type": "color",
+        "value": "#fff",
+        "desc": ""
+      },
+      {
+        "name": "@back-top-bg",
+        "type": "string",
+        "value": "@text-color-secondary",
+        "desc": ""
+      },
+      {
+        "name": "@back-top-hover-bg",
+        "type": "string",
+        "value": "@text-color",
+        "desc": ""
+      }
+    ]
+  },
+  {
+    "name": "Avatar",
+    "children": [
+      {
+        "name": "@avatar-bg",
+        "type": "color",
+        "value": "#ccc",
+        "desc": ""
+      },
+      {
+        "name": "@avatar-color",
+        "type": "color",
+        "value": "#fff",
+        "desc": ""
+      },
+      {
+        "name": "@avatar-border-radius",
+        "type": "string",
+        "value": "@border-radius-base",
+        "desc": ""
+      }
+    ]
+  },
+  {
+    "name": "Switch",
+    "children": [
+      {
+        "name": "@switch-color",
+        "type": "string",
+        "value": "@primary-color",
+        "desc": ""
+      },
+      {
+        "name": "@switch-shadow-color",
+        "type": "string",
+        "value": "fade(#00230b, 20%)",
+        "desc": ""
+      }
+    ]
+  },
+  {
+    "name": "Pagination",
+    "children": [
+      {
+        "name": "@switch-shadow-color",
+        "type": "string",
+        "value": "fade(#00230b, 20%)",
+        "desc": ""
+      },
+      {
+        "name": "@pagination-font-family",
+        "type": "string",
+        "value": "Arial",
+        "desc": ""
+      },
+      {
+        "name": "@pagination-item-bg-active",
+        "type": "string",
+        "value": "@component-background",
+        "desc": ""
+      }
+    ]
+  },
+  {
+    "name": "Breadcrumb",
+    "children": [
+      {
+        "name": "@breadcrumb-base-color",
+        "type": "string",
+        "value": "@text-color-secondary",
+        "desc": ""
+      },
+      {
+        "name": "@breadcrumb-last-item-color",
+        "type": "string",
+        "value": "@text-color",
+        "desc": ""
+      },
+      {
+        "name": "@breadcrumb-link-color",
+        "type": "string",
+        "value": "@text-color-secondary",
+        "desc": ""
+      },
+      {
+        "name": "@breadcrumb-link-color-hover",
+        "type": "string",
+        "value": "@primary-5",
+        "desc": ""
+      },
+      {
+        "name": "@breadcrumb-separator-color",
+        "type": "string",
+        "value": "@text-color-secondary",
+        "desc": ""
+      }
+    ]
+  },
+  {
+    "name": "Slider",
+    "children": [
+      {
+        "name": "@slider-rail-background-color",
+        "type": "string",
+        "value": "@background-color-base",
+        "desc": ""
+      },
+      {
+        "name": "@slider-rail-background-color-hover",
+        "type": "color",
+        "value": "#e1e1e1",
+        "desc": ""
+      },
+      {
+        "name": "@slider-track-background-color",
+        "type": "string",
+        "value": "@primary-3",
+        "desc": ""
+      },
+      {
+        "name": "@slider-track-background-color-hover",
+        "type": "string",
+        "value": "@primary-4",
+        "desc": ""
+      },
+      {
+        "name": "@slider-handle-color",
+        "type": "string",
+        "value": "@primary-3",
+        "desc": ""
+      },
+      {
+        "name": "@slider-handle-color-hover",
+        "type": "string",
+        "value": "@primary-4",
+        "desc": ""
+      },
+      {
+        "name": "@slider-handle-color-focus",
+        "type": "string",
+        "value": "tint(@primary-color, 20%)",
+        "desc": ""
+      },
+      {
+        "name": "@slider-handle-color-focus-shadow",
+        "type": "string",
+        "value": "fade(@primary-color, 20%)",
+        "desc": ""
+      },
+      {
+        "name": "@slider-handle-color-tooltip-open",
+        "type": "string",
+        "value": "@primary-color",
+        "desc": ""
+      },
+      {
+        "name": "@slider-dot-border-color",
+        "type": "string",
+        "value": "@border-color-split",
+        "desc": ""
+      },
+      {
+        "name": "@slider-dot-border-color-active",
+        "type": "string",
+        "value": "tint(@primary-color, 50%)",
+        "desc": ""
+      },
+      {
+        "name": "@slider-disabled-color",
+        "type": "string",
+        "value": "@disabled-color",
+        "desc": ""
+      },
+      {
+        "name": "@slider-disabled-background-color",
+        "type": "string",
+        "value": "@component-background",
+        "desc": ""
+      }
+    ]
+  },
+  {
+    "name": "Tree",
+    "children": [
+      {
+        "name": "@tree-directory-selected-color",
+        "type": "color",
+        "value": "#fff",
+        "desc": ""
+      },
+      {
+        "name": "@tree-directory-selected-bg",
+        "type": "string",
+        "value": "@primary-color",
+        "desc": ""
+      }
+    ]
+  },
+  {
+    "name": "Collapse",
+    "children": [
+      {
+        "name": "@collapse-header-bg",
+        "type": "string",
+        "value": "@background-color-light",
+        "desc": ""
+      },
+      {
+        "name": "@collapse-content-bg",
+        "type": "string",
+        "value": "@component-background",
+        "desc": ""
+      }
+    ]
+  },
+  {
+    "name": "Skeleton",
+    "children": [
+      {
+        "name": "@skeleton-color",
+        "type": "color",
+        "value": "#f2f2f2",
+        "desc": ""
+      }
+    ]
+  },
+  {
+    "name": "Transfer",
+    "children": [
+      {
+        "name": "@transfer-disabled-bg",
+        "type": "string",
+        "value": "@disabled-bg",
+        "desc": ""
+      }
+    ]
+  },
+  {
+    "name": "Alert",
+    "children": [
+      {
+        "name": "@alert-success-border-color",
+        "type": "string",
+        "value": "~`colorPalette('@{success-color}', 3) `",
+        "desc": ""
+      },
+      {
+        "name": "@alert-success-bg-color",
+        "type": "string",
+        "value": "~`colorPalette('@{success-color}', 1) `",
+        "desc": ""
+      },
+      {
+        "name": "@alert-success-icon-color",
+        "type": "string",
+        "value": "@success-color",
+        "desc": ""
+      },
+      {
+        "name": "@alert-info-border-color",
+        "type": "string",
+        "value": "~`colorPalette('@{info-color}', 3) `",
+        "desc": ""
+      },
+      {
+        "name": "@alert-info-bg-color",
+        "type": "string",
+        "value": "~`colorPalette('@{info-color}', 1) `",
+        "desc": ""
+      },
+      {
+        "name": "@alert-info-icon-color",
+        "type": "string",
+        "value": "@info-color",
+        "desc": ""
+      },
+      {
+        "name": "@alert-warning-border-color",
+        "type": "string",
+        "value": "~`colorPalette('@{warning-color}', 3) `",
+        "desc": ""
+      },
+      {
+        "name": "@alert-warning-bg-color",
+        "type": "string",
+        "value": "~`colorPalette('@{warning-color}', 1) `",
+        "desc": ""
+      },
+      {
+        "name": "@alert-warning-icon-color",
+        "type": "string",
+        "value": "@warning-color",
+        "desc": ""
+      },
+      {
+        "name": "@alert-error-border-color",
+        "type": "string",
+        "value": "~`colorPalette('@{error-color}', 3) `",
+        "desc": ""
+      },
+      {
+        "name": "@alert-error-bg-color",
+        "type": "string",
+        "value": "~`colorPalette('@{error-color}', 1) `",
+        "desc": ""
+      },
+      {
+        "name": "@alert-error-icon-color",
+        "type": "string",
+        "value": "@error-color",
+        "desc": ""
+      }
+    ]
+  },
+  {
+    "name": "List",
+    "children": [
+      {
+        "name": "@list-header-background",
+        "type": "string",
+        "value": "transparent",
+        "desc": ""
+      },
+      {
+        "name": "@list-footer-background",
+        "type": "string",
+        "value": "transparent",
+        "desc": ""
+      }
+    ]
+  }
+]

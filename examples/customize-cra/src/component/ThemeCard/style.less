@@ -1,0 +1,49 @@
+.theme-card {
+  width: 320px;
+  height: 100%;
+  position: relative;
+
+  .toggle {
+    padding: 2px 4px;
+    position: absolute;
+    top: -14px;
+    left: 20px;
+    z-index: 1000;
+    background: white;
+    border: 1px solid #e8e8e8;
+
+    .btn-toggle {
+      width: 20px;
+    }
+  }
+
+  .ant-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    // overflow: hidden;
+
+    &.hide {
+      display: none;
+    }
+
+    // .ant-card-head {
+    //   cursor: cell;
+    // }
+  
+    [class*="-card-body"] {
+      flex: 1;
+      overflow: auto;
+
+      .search-fileds {
+        padding: 18px 8px;
+      }
+    }
+  
+    .theme-card-title {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+}

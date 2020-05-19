@@ -1,0 +1,130 @@
+@import '~antd/lib/style/themes/default.less';
+
+.component-preview {
+  // padding-right: 340px;
+
+  h4 {
+    color: @heading-color;
+  }
+
+  .colors {
+    .color-row {
+      display: flex;
+      flex-wrap: wrap;
+      
+      .color-item {
+        width: 160px;
+        height: 100px;
+        box-sizing: border-box;
+        margin-right: 6px;
+        margin-bottom: 6px;
+        border-radius: 4px;
+        color: @text-color;
+
+        .color-item-content {
+          height: 100%;
+          padding: 20px;
+        }
+
+        &.primary {
+          background: @primary-color;
+          color: @text-color-inverse;
+        }
+        &.success {
+          background: @success-color;
+          color: @text-color-inverse;
+        }
+        &.info {
+          background: @info-color;
+          color: @text-color-inverse;
+        }
+        &.warning {
+          background: @warning-color;
+          color: @text-color-inverse;
+        }
+        &.error {
+          background: @error-color;
+          color: @text-color-inverse;
+        }
+        &.highlight {
+          background: @highlight-color;
+          color: @text-color-inverse;
+        }
+        &.body-background {
+          background: @body-background;
+        }
+        &.component-background {
+          background: @component-background;
+        }
+        &.layout-header-background {
+          background: @layout-header-background;
+          color: @text-color-inverse;
+        }
+        &.layout-body-background {
+          background: @layout-body-background;
+          border: 1px solid @border-color-base;
+        }
+        &.layout-footer-background {
+          background: @layout-footer-background;
+          border: 1px solid @border-color-base;
+        }
+        &.border-color-base {
+          background: @border-color-base;
+        }
+        &.border-color-split {
+          background: @border-color-split;
+        }
+        &.link-color {
+          background: @link-color;
+          color: @text-color-inverse;
+        }
+        &.disabled-color {
+          background: @disabled-color;
+        }
+        &.disabled-bg {
+          background: @disabled-bg;
+        }
+        &.processing-color {
+          background: @processing-color;
+          color: @text-color-inverse;
+        }
+        &.icon-color {
+          background: @icon-color;
+          border: 1px solid @border-color-base;
+        }
+        &.icon-color-hover {
+          background: @icon-color-hover;
+          color: @text-color-inverse;
+        }
+        &.heading-color {
+          background: @heading-color;
+          color: @text-color-inverse;
+        }
+        &.text-color {
+          background: @text-color;
+          color: @text-color-inverse;
+        }
+        &.text-color-secondary {
+          background: @text-color-secondary;
+          color: @text-color-inverse;
+        }
+        &.text-selection-bg {
+          background: @text-selection-bg;
+          color: @text-color-inverse;
+        }
+        &.text-color-inverse {
+          background: @text-color-inverse;
+        }
+        &.heading-color-dark {
+          background: @heading-color-dark;
+        }
+        &.text-color-dark {
+          background: @text-color-dark;
+        }
+        &.text-color-secondary-dark {
+          background: @text-color-secondary-dark;
+        }
+      }
+    }
+  }
+}

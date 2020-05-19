@@ -1,6 +1,6 @@
 @import "../vars";
 .dashboard {
-  color: @heading-color;
+  color: @text-color;
 }
 
 .secondary {
@@ -14,4 +14,54 @@
 
 .theme-selector {
   width: 150px;
+}
+
+
+.preview {
+  max-width: 1600px;
+
+  .abnormal-hint {
+    margin-bottom: 20px;
+  }
+}
+
+.options {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.components {
+  &.input {
+    width: 500px;
+  }
+  &.tree {
+    .component-row {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+  .component-row {
+    margin-bottom: 12px;
+
+    &.calendar {
+      width: 300px;
+    }
+
+    .component-col {
+      display: inline-block;
+      margin-right: 14px;
+
+      .badge-square {
+        width: 42px;
+        height: 42px;
+        border-radius: 4px;
+        display: inline-block;
+        vertical-align: middle;
+      }
+    }
+  }
+}
+
+.ant-back-top {
+  right: 370px !important; 
 }

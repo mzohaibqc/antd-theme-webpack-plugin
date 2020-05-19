@@ -47,7 +47,7 @@ Add this plugin in `plugins` array.
   - /src/styles
 - Default variables file path
   - /src/styles/variables.less (import `antd/lib/style/themes/default.less` file at top (important))
-- Default styles main file path
+- Default styles main file path (not required if you are using verison 1.3.5 or higher)
   - /src/styles/index.less
 - Default Theme variables (that can be updated in browser)
   - ['@primary-color']
@@ -96,7 +96,8 @@ You need to enable javascript for less-loader.
 
 ```
 
-## Note: include all color variables in `varFile` that you want to change dynamically and assign them unique color codes. Don't assign same color to two or more variables and don't use `#fff`, `#ffffff`, `#000` or `#000000`. If you still want white or black color as default, slightly change it e.g. `#fffffe` or `#000001` which will not replace common background colors from other components. 
+## Below restriction is for verion 1.3.4 or less. Now after v1.3.5, there is no need to use unique hex color codes for your theme variables, you can use same code or even assign a color variable to another theme color.
+## Note: (for v1.3.4 or lower version) include all color variables in `varFile` that you want to change dynamically and assign them unique color codes. Don't assign same color to two or more variables and don't use `#fff`, `#ffffff`, `#000` or `#000000`. If you still want white or black color as default, slightly change it e.g. `#fffffe` or `#000001` which will not replace common background colors from other components. 
 
 ## If you variables have some custom color code like `fade(@primary-color, 20%)` or something that does not matches with common regex to match a valid color then add your custom regex array as `customColorRegexArray` variable in options object while executing `generateTheme(options)`.
 

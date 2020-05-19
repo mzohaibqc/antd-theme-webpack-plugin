@@ -1,17 +1,14 @@
 {
   "name": "antd-theme-webpack-plugin",
-  "version": "1.3.4",
+  "version": "1.3.5",
   "description": "A webpack plugin to provide Dynamic Theme for Ant Design",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "gh-pages -d examples/customize-cra/build"
   },
   "dependencies": {
-    "antd-theme-generator": "^1.2.2",
-    "customize-cra": "^0.9.1",
-    "less-bundle-promise": "1.0.7",
-    "postcss": "^6.0.21",
-    "react-app-rewired": "^2.1.5"
+    "antd-theme-generator": "^1.2.3"
   },
   "author": {
     "name": "mzohaibqc",
@@ -31,5 +28,8 @@
     "dynamic-theme",
     "webpack"
   ],
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "gh-pages": "^2.2.0"
+  }
 }

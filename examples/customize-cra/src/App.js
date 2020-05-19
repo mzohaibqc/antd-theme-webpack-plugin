@@ -2,30 +2,60 @@ import React, { Component } from "react";
 import {
   Row,
   Col,
-  Breadcrumb,
-  Menu,
   Layout,
   Form,
   Select,
-  Switch,
-  Radio,
-  Card,
   message,
   Button,
-  Upload,
-  DatePicker,
-  Progress,
-  Dropdown,
-  Pagination,
-  Checkbox,
-  Badge,
-  List,
-  Timeline,
-  Avatar
+  Spin,
 } from "antd";
+import {
+  ColorPreview,
+  TypographyPreview,
+  ButtonPreview,
+  RadioPreview,
+  CheckboxPreview,
+  InputPreview,
+  SwitchPreview,
+  SliderPreview,
+  DatePickerPreview,
+  RatePreview,
+  TransferPreview,
+  TablePreview,
+  TagPreview,
+  ProgressPreview,
+  TreePreview,
+  PaginationPreview,
+  BadgePreview,
+  AlertPreview,
+  SpinPreview,
+  MessagePreview,
+  NotificationPreview,
+  TabsPreview,
+  MenuPreview,
+  TooltipPreview,
+  PopoverPreview,
+  CardPreview,
+  CarouselPreview,
+  CollapsePreview,
+  AvatarPreview,
+  DropdownPreview,
+  StepPreview,
+  CascaderPreview,
+  SelectPreview,
+  TreeSelectPreview,
+  TimePickerPreview,
+  CalendarPreview,
+  ListPreview,
+  TimelinePreview,
+  PopconfirmPreview,
+  ModalPreview,
+  FormPreview
+} from './previews';
+
 
 import {
-  ClockCircleOutlined, DownOutlined, MenuFoldOutlined, MenuUnfoldOutlined, CloseOutlined
+  MenuFoldOutlined, MenuUnfoldOutlined, CloseOutlined
 } from '@ant-design/icons';
 
 import Navbar from './Navbar';
@@ -34,17 +64,17 @@ import darkVars from './dark.json';
 import lightVars from './light.json';
 import './styles/main.less';
 
+// eslint-disable jsx-a11y/anchor-has-content
 const { Footer, Content, Sider } = Layout;
 const FormItem = Form.Item;
 const Option = Select.Option;
-const RadioButton = Radio.Button;
-const RadioGroup = Radio.Group;
 
 class App extends Component {
   constructor(props) {
     super(props);
     let initialValue = lightVars;
     let vars = {};
+    let themeName =  localStorage.getItem("theme-name") || 'light';
 
     try {
       vars = localStorage.getItem("app-theme");
@@ -60,10 +90,17 @@ class App extends Component {
     } catch (e) {
       vars = initialValue;
     } finally {
-      this.state = { vars, initialValue };
+      this.state = {
+        themeApplied: false,
+        vars, initialValue, size: 'default',
+        disabled: false,
+        themeName
+      };
       window.less
         .modifyVars(vars)
-        .then(() => { })
+        .then(() => { 
+          this.setState({ themeApplied: true });
+        })
         .catch(error => {
           message.error(`Failed to update theme`);
         });
@@ -136,6 +173,8 @@ class App extends Component {
   );
   resetTheme = () => {
     localStorage.setItem("app-theme", "{}");
+    localStorage.setItem("theme-name", 'light');
+    this.setState({ themeName: 'light' });
     this.setState({ vars: this.state.initialValue });
     window.less.modifyVars(this.state.initialValue).catch(error => {
       message.error(`Failed to reset theme`);
@@ -148,75 +187,31 @@ class App extends Component {
   }
 
   render() {
-    const { collapsed } = this.state;
+    const { collapsed, size, disabled, themeApplied } = this.state;
     const colorPickerOptions = ["@primary-color", "@secondary-color", "@text-color", "@text-color-secondary", "@heading-color", "@layout-header-background", "@btn-primary-bg"];
     // const colorPickers = Object.keys(this.state.vars).filter(name => colorPickerOptions.indexOf(name) > -1).map((varName, index) =>
     const colorPickers = colorPickerOptions.map((varName, index) =>
       this.getColorPicker(varName, index > 3 ? 'top' : 'right')
     );
-    const formItemLayout = {
-      labelCol: { span: 6 },
-      wrapperCol: { span: 18 }
-    };
 
     const themeLayout = {
       labelCol: { span: 24 },
       wrapperCol: { span: 24 }
+    };
+    if (!themeApplied) {
+
+      return (
+        <Spin size="large">
+          <Layout className="app" />
+        </Spin>
+      )
     }
-
-    const listData = [
-      {
-        title: "Ant Design Title 1"
-      },
-      {
-        title: "Ant Design Title 2"
-      },
-      {
-        title: "Ant Design Title 3"
-      },
-      {
-        title: "Ant Design Title 4"
-      }
-    ];
-
-    const menu = (
-      <Menu>
-        <Menu.Item>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href="http://www.alipay.com/"
-          >
-            1st menu item
-          </a>
-        </Menu.Item>
-        <Menu.Item>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href="http://www.taobao.com/"
-          >
-            2nd menu item
-          </a>
-        </Menu.Item>
-        <Menu.Item>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href="http://www.tmall.com/"
-          >
-            3rd menu item
-          </a>
-        </Menu.Item>
-      </Menu>
-    );
     return (
       <Layout className="app">
         <Navbar />
         <Content className="content">
           <Layout>
             <Sider
-              theme="light"
               breakpoint="lg"
               collapsedWidth={40}
               collapsed={collapsed}
@@ -235,24 +230,21 @@ class App extends Component {
                   <Col span={22} offset={1}><FormItem
                     {...themeLayout}
                     label="Choose Theme"
-                    className="ant-col ant-col-xs-22 ant-col-offset-1"
+                    className="ant-col ant-col-xs-22 ant-col-offset-1 choose-theme"
                   >
 
                     <Select
                       placeholder="Please select theme"
+                      value={this.state.themeName}
                       onSelect={value => {
                         let vars = value === 'light' ? lightVars : darkVars;
                         vars = { ...vars, '@white': '#fff', '@black': '#000' };
-                        if (value === 'light') {
-                          vars['@select-item-selected-option-color'] = vars['@text-color'];
-                        } else {
-                          vars['@select-item-selected-option-color'] = vars['@primary-color'];
-                        }
+                        this.setState({ vars, themeName: value });
                         this.setState({ vars });
+                        localStorage.setItem("app-theme", JSON.stringify(vars));
+                        localStorage.setItem("theme-name", value);
                         window.less.modifyVars(vars).catch(error => {
-                          message.error(`Failed to reset theme`);
-                          this.setState({ vars });
-                          localStorage.setItem("app-theme", JSON.stringify(vars));
+                          
                         });
                       }}
                     >
@@ -270,214 +262,52 @@ class App extends Component {
                   {!collapsed ? "Reset Theme" : <CloseOutlined />}
                 </Button>
               </Row>
-              
+
             </Sider>
-            <Content style={{ padding: '0 24px', minHeight: 280 }}>
-              <Breadcrumb style={{ margin: '16px 0' }}>
-                <Breadcrumb.Item>Home</Breadcrumb.Item>
-                <Breadcrumb.Item>List</Breadcrumb.Item>
-                <Breadcrumb.Item>App</Breadcrumb.Item>
-              </Breadcrumb>
-              <Row>
-                <Col xs={24} sm={6}>
-                  <Card
-                    title="Default size card"
-                    extra={<a href="#">More</a>}
-                    style={{ width: 300 }}
-                  >
-                    <p>Card content</p>
-                    <p>Card content</p>
-                    <p>Card content</p>
-                  </Card>
-                  <Card
-                    size="small"
-                    title="Small size card"
-                    extra={<a href="#">More</a>}
-                    style={{ width: 300 }}
-                  >
-                    <p>Card content</p>
-                    <p>Card content</p>
-                    <p>Card content</p>
-                  </Card>
-                </Col>
-                <Col xs={24} sm={{ span: 15, offset: 3 }}>
-                  <Form onSubmit={this.handleSubmit}>
-                    <Col xs={24} sm={12}>
-                      <FormItem
-                        {...formItemLayout}
-                        label="Select[multiple]"
-                        rules={[
-                          {
-                            required: true,
-                            message:
-                              "Please select your favourite colors!",
-                            type: "array"
-                          }
-                        ]}
-                      >
-                        <Select
-                          mode="multiple"
-                          placeholder="Please select favourite colors"
-                        >
-                          <Option value="red">Red</Option>
-                          <Option value="green">Green</Option>
-                          <Option value="blue">Blue</Option>
-                        </Select>
-                      </FormItem>
-
-                      <FormItem {...formItemLayout} label="Switch" valuePropName="checked">
-                        <Switch />
-                      </FormItem>
-
-                      <FormItem {...formItemLayout} label="Radio.Group">
-                        <RadioGroup>
-                          <Radio value={1}>A</Radio>
-                          <Radio value={2}>B</Radio>
-                          <Radio value={3}>C</Radio>
-                          <Radio value={4}>D</Radio>
-                        </RadioGroup>
-                      </FormItem>
-
-                      <FormItem {...formItemLayout} label="Radio.Button">
-                        <RadioGroup>
-                          <RadioButton value="a">item 1</RadioButton>
-                          <RadioButton value="b">item 2</RadioButton>
-                          <RadioButton value="c">item 3</RadioButton>
-                        </RadioGroup>
-                      </FormItem>
-                      <Progress percent={60} />
-                    </Col>
-                    <Col xs={24} sm={12}>
-                      <FormItem {...formItemLayout} label="Date">
-                        <DatePicker />
-                      </FormItem>
-                      <FormItem {...formItemLayout} label="Upload" valuePropName="fileList" getValueFromEvent={this.normFile}>
-                        <Upload
-                          name="logo"
-                          action="/upload.do"
-                          listType="picture"
-                        >
-                          <Button>
-                            <Upload /> Click to upload
-                                </Button>
-                        </Upload>
-                      </FormItem>
-                      <FormItem wrapperCol={{ span: 12, offset: 6 }}>
-                        <Button type="default">Cancel</Button>
-                        <Button type="primary" htmlType="submit">
-                          Submit
-                            </Button>
-                      </FormItem>
-
-
-
-                    </Col>
-                  </Form>
-                </Col>
-              </Row>
-              <Row
-                type="flex"
-                justify="left"
-                className="secondary-color"
-              >
-                <Col xs={24} sm={6}>
-                  <Row
-                    type="flex"
-                    justify="left"
-                    className="secondary-color"
-                  >
-                    <List
-                      itemLayout="horizontal"
-                      dataSource={listData}
-                      renderItem={item => (
-                        <List.Item>
-                          <List.Item.Meta
-                            avatar={
-                              <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
-                            }
-                            title={
-                              <a href="https://ant.design">
-                                {item.title}
-                              </a>
-                            }
-                            description="Ant Design, a design language for background applications, is refined by Ant UED Team"
-                          />
-                        </List.Item>
-                      )}
-                    />
-                  </Row>
-                </Col>
-                <Col xs={24} sm={6}>
-                  <Row
-                    type="flex"
-                    justify="left"
-                    className="secondary-color component-container"
-                  >
-                    <Dropdown overlay={menu}>
-                      <a className="ant-dropdown-link" href="#">
-                        Hover me <DownOutlined />
-                      </a>
-                    </Dropdown>
-                  </Row>
-                  <Row
-                    type="flex"
-                    justify="left"
-                    className="secondary-color component-container"
-                  >
-                    <Pagination defaultCurrent={1} total={50} />
-                  </Row>
-                  <Row
-                    type="flex"
-                    justify="left"
-                    className="secondary-color component-container"
-                  >
-                    <Checkbox>Checkbox</Checkbox>
-                  </Row>
-                </Col>
-                <Col xs={24} sm={6}>
-                  <Row
-                    type="flex"
-                    justify="left"
-                    className="secondary-color"
-                  >
-                    <div>
-                      <Badge count={5}>
-                        <a href="#" className="head-example" />
-                      </Badge>
-                      <Badge count={0} showZero>
-                        <a href="#" className="head-example" />
-                      </Badge>
-                      <Badge
-                        count={
-                          <ClockCircleOutlined
-                            style={{ color: "#f5222d" }}
-                          />
-                        }
-                      >
-                        <a href="#" className="head-example" />
-                      </Badge>
-                    </div>
-                  </Row>
-                </Col>
-              </Row>
-              <Row>
-                <Col xs={24} lg={{ span: 9, offset: 3 }} style={{ marginTop: 15 }}>
-                  <Timeline>
-                    <Timeline.Item>Create a services site 2015-09-01</Timeline.Item>
-                    <Timeline.Item>Solve initial network problems 2015-09-01</Timeline.Item>
-                    <Timeline.Item>Technical testing 2015-09-01</Timeline.Item>
-                    <Timeline.Item>Network problems being solved 2015-09-01</Timeline.Item>
-                  </Timeline>
-                </Col>
-                <Col xs={24} lg={{ span: 12 }} style={{ marginTop: 15 }}>
-                  <Timeline>
-                    <Timeline.Item>Create a services site 2015-09-01</Timeline.Item>
-                    <Timeline.Item>Solve initial network problems 2015-09-01</Timeline.Item>
-                    <Timeline.Item>Technical testing 2015-09-01</Timeline.Item>
-                    <Timeline.Item>Network problems being solved 2015-09-01</Timeline.Item>
-                  </Timeline>
-                </Col>
-              </Row>
+            <Content id="preview-content">
+              <div className="preview">
+                <ColorPreview />
+                <TypographyPreview />
+                <ButtonPreview disabled={disabled} size={size} />
+                <RadioPreview disabled={disabled} size={size} />
+                <CheckboxPreview disabled={disabled} size={size} />
+                <InputPreview disabled={disabled} size={size} />
+                <SelectPreview disabled={disabled} size={size} />
+                <TreeSelectPreview disabled={disabled} size={size} />
+                <SwitchPreview disabled={disabled} size={size} />
+                <SliderPreview disabled={disabled} size={size} />
+                <DatePickerPreview disabled={disabled} size={size} />
+                <TimePickerPreview disabled={disabled} size={size} />
+                <RatePreview disabled={disabled} size={size} />
+                <StepPreview disabled={disabled} size={size} />
+                <CascaderPreview disabled={disabled} size={size} />
+                <DropdownPreview disabled={disabled} size={size} />
+                <TransferPreview disabled={disabled} size={size} />
+                <FormPreview disabled={disabled} size={size} />
+                <TablePreview disabled={disabled} size={size} />
+                <PaginationPreview disabled={disabled} size={size} />
+                <ProgressPreview disabled={disabled} size={size} />
+                <TreePreview disabled={disabled} size={size} />
+                <SpinPreview disabled={disabled} size={size} />
+                <TabsPreview disabled={disabled} size={size} />
+                <MenuPreview disabled={disabled} size={size} />
+                <CardPreview disabled={disabled} size={size} />
+                <CarouselPreview disabled={disabled} size={size} />
+                <CollapsePreview disabled={disabled} size={size} />
+                <AvatarPreview disabled={disabled} size={size} />
+                <CalendarPreview disabled={disabled} size={size} />
+                <ListPreview disabled={disabled} size={size} />
+                <TimelinePreview disabled={disabled} size={size} />
+                <TagPreview disabled={disabled} size={size} />
+                <BadgePreview disabled={disabled} size={size} />
+                <AlertPreview disabled={disabled} size={size} />
+                <MessagePreview disabled={disabled} size={size} />
+                <NotificationPreview disabled={disabled} size={size} />
+                <TooltipPreview disabled={disabled} size={size} />
+                <PopoverPreview disabled={disabled} size={size} />
+                <PopconfirmPreview disabled={disabled} size={size} />
+                <ModalPreview disabled={disabled} size={size} />
+              </div>
             </Content>
           </Layout>
         </Content>
