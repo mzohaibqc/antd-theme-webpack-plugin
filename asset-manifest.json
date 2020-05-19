@@ -1,26 +1,26 @@
 {
   "files": {
-    "main.css": "/antd-theme-webpack-plugin/static/css/main.31fb38af.chunk.css",
-    "main.js": "/antd-theme-webpack-plugin/static/js/main.018f7c9e.chunk.js",
-    "main.js.map": "/antd-theme-webpack-plugin/static/js/main.018f7c9e.chunk.js.map",
+    "main.css": "/antd-theme-webpack-plugin/static/css/main.35da95f9.chunk.css",
+    "main.js": "/antd-theme-webpack-plugin/static/js/main.48446528.chunk.js",
+    "main.js.map": "/antd-theme-webpack-plugin/static/js/main.48446528.chunk.js.map",
     "runtime-main.js": "/antd-theme-webpack-plugin/static/js/runtime-main.938a99b6.js",
     "runtime-main.js.map": "/antd-theme-webpack-plugin/static/js/runtime-main.938a99b6.js.map",
-    "static/css/2.52a14649.chunk.css": "/antd-theme-webpack-plugin/static/css/2.52a14649.chunk.css",
-    "static/js/2.4ffee6f6.chunk.js": "/antd-theme-webpack-plugin/static/js/2.4ffee6f6.chunk.js",
-    "static/js/2.4ffee6f6.chunk.js.map": "/antd-theme-webpack-plugin/static/js/2.4ffee6f6.chunk.js.map",
+    "static/css/2.dd027c61.chunk.css": "/antd-theme-webpack-plugin/static/css/2.dd027c61.chunk.css",
+    "static/js/2.414841eb.chunk.js": "/antd-theme-webpack-plugin/static/js/2.414841eb.chunk.js",
+    "static/js/2.414841eb.chunk.js.map": "/antd-theme-webpack-plugin/static/js/2.414841eb.chunk.js.map",
     "color.less": "/antd-theme-webpack-plugin/color.less",
     "index.html": "/antd-theme-webpack-plugin/index.html",
-    "precache-manifest.3c71c8d9a487588e1734a320fabd5984.js": "/antd-theme-webpack-plugin/precache-manifest.3c71c8d9a487588e1734a320fabd5984.js",
+    "precache-manifest.1f4cd874d346c6b2777f7d8137d5333b.js": "/antd-theme-webpack-plugin/precache-manifest.1f4cd874d346c6b2777f7d8137d5333b.js",
     "service-worker.js": "/antd-theme-webpack-plugin/service-worker.js",
-    "static/css/2.52a14649.chunk.css.map": "/antd-theme-webpack-plugin/static/css/2.52a14649.chunk.css.map",
-    "static/css/main.31fb38af.chunk.css.map": "/antd-theme-webpack-plugin/static/css/main.31fb38af.chunk.css.map",
-    "static/js/2.4ffee6f6.chunk.js.LICENSE.txt": "/antd-theme-webpack-plugin/static/js/2.4ffee6f6.chunk.js.LICENSE.txt"
+    "static/css/2.dd027c61.chunk.css.map": "/antd-theme-webpack-plugin/static/css/2.dd027c61.chunk.css.map",
+    "static/css/main.35da95f9.chunk.css.map": "/antd-theme-webpack-plugin/static/css/main.35da95f9.chunk.css.map",
+    "static/js/2.414841eb.chunk.js.LICENSE.txt": "/antd-theme-webpack-plugin/static/js/2.414841eb.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.938a99b6.js",
-    "static/css/2.52a14649.chunk.css",
-    "static/js/2.4ffee6f6.chunk.js",
-    "static/css/main.31fb38af.chunk.css",
-    "static/js/main.018f7c9e.chunk.js"
+    "static/css/2.dd027c61.chunk.css",
+    "static/js/2.414841eb.chunk.js",
+    "static/css/main.35da95f9.chunk.css",
+    "static/js/main.48446528.chunk.js"
   ]
 }
