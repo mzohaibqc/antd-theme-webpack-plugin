@@ -1,6 +1,6 @@
 {
   "name": "antd-theme-webpack-plugin",
-  "version": "1.3.5",
+  "version": "1.3.6",
   "description": "A webpack plugin to provide Dynamic Theme for Ant Design",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,7 @@
     "deploy": "cd examples/customize-cra && npm run build && gh-pages -d build && cd ../../"
   },
   "dependencies": {
-    "antd-theme-generator": "^1.2.3"
+    "antd-theme-generator": "^1.2.4"
   },
   "author": {
     "name": "mzohaibqc",

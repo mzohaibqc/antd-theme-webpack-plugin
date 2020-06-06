@@ -1,8 +1,8 @@
 const path = require("path");
 const fs = require("fs");
 const { override, fixBabelImports, addLessLoader, addWebpackPlugin } = require('customize-cra');
-// const AntDesignThemePlugin = require("antd-theme-webpack-plugin");
-const AntDesignThemePlugin = require("../../index");
+const AntDesignThemePlugin = require("antd-theme-webpack-plugin");
+// const AntDesignThemePlugin = require("../../index");
 const { getLessVars } = require('antd-theme-generator');
 
 const themeVariables = getLessVars(path.join(__dirname, './src/styles/vars.less'))

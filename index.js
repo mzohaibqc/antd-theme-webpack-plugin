@@ -5,7 +5,6 @@ class AntDesignThemePlugin {
   constructor(options) {
     const defaulOptions = {
       varFile: path.join(__dirname, "../../src/styles/variables.less"),
-      mainLessFile: path.join(__dirname, "../../src/styles/index.less"),
       antDir: path.join(__dirname, "../../node_modules/antd"),
       stylesDir: path.join(__dirname, "../../src/styles/antd"),
       themeVariables: ["@primary-color"],

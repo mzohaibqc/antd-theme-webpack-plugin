@@ -2,7 +2,12 @@
 This document contains changes in this plugin with each version change.
 
 
-## [1.3.5] - 2020-05-19 (latest)
+## [1.3.6] - 2020-06-06 (latest)
+- Fixed following issues
+    - https://github.com/ant-design/ant-design/issues/24777
+    - https://github.com/mzohaibqc/antd-theme-generator/issues/45
+    - 
+## [1.3.5] - 2020-05-19
 - Rewamped base script to remove restriction to use unique theme color values for different variables, now you can use same color for multiple variables or even 
  variables as value for other variables
 - now generated color.less size has been reduced by 30% or more (300kB -> 200kB) due to removal of redundant rules and ant design variables
