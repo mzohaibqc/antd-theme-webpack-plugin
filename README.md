@@ -40,13 +40,13 @@ Add this plugin in `plugins` array.
 
 | Property | Type | Default | Descript |
 | --- | --- | --- | --- |
-| antdDir | string | - | This is path to antd directory in your node_modules |
+| antDir | string | - | This is path to antd directory in your node_modules |
 | stylesDir | string | - | This is path to your custom styles root directory, all files with .less extension in this folder and nested folders will be processed  |
 | varFile | string | - | Path to your theme related variables file |
 | themeVariables | array | ['@primary-color'] | List of variables that you want to dynamically change |
 | indexFileName | string | index.html | File name of your main html file, in most cases it is `index.html` which is default |
 | lessUrl | string | https://cdnjs.cloudflare.com/ajax/libs/less.js/2.7.2/less.min.js | less.js cdn or file path |
-| publicPath | string | '' | This string will be appended to `/color.less` in `index.html` file in case |
+| publicPath | string | '' | This string will be prepended to `/color.less` in `index.html` file in case |
 | generateOnce | boolean | false | Everytime webpack will build new code due to some code changes in development, this plugin will run again unless you specify this flag as `true` which will just compile your styles once |
 | customColorRegexArray | array | ['color', 'lighten', 'darken', 'saturate', 'desaturate', 'fadein', 'fadeout', 'fade', 'spin', 'mix', 'hsv', 'tint', 'shade', 'greyscale', 'multiply', 'contrast', 'screen', 'overlay'].map(name => new RegExp(`${name}\(.*\)`))] | This array is to provide regex which will match your color value, most of the time you don't need this |
 
