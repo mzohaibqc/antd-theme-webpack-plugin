@@ -1,1 +1,1 @@
-{"@primary-color":"#00375B","@select-item-selected-option-color":"@primary-color","@processing-color":"@primary-color","@select-item-selected-bg":"@background-color-base","@secondary-color":"@primary-color","@skeleton-color":"@primary-color","@btn-primary-bg":"@primary-color"}
+{"@primary-color":"@blue-6","@select-item-selected-option-color":"@primary-color","@processing-color":"@primary-color","@select-item-selected-bg":"@background-color-base","@secondary-color":"@primary-color","@skeleton-color":"@primary-color","@btn-primary-bg":"@primary-color"}

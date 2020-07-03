@@ -36,6 +36,5 @@ module.exports = override(
   addWebpackPlugin(new AntDesignThemePlugin(options)),
   addLessLoader({
     javascriptEnabled: true,
-    modifyVars: { '@primary-color': '#25b864' },
   }),
 );
