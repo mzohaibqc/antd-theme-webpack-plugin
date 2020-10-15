@@ -1,15 +1,38 @@
 {
-  "name": "antd-theme-webpack-plugin",
-  "version": "1.3.6",
+  "name": "adasdasdsdasqwqwr3fsasdasdasdsaczxx",
+  "version": "1.3.8",
   "description": "A webpack plugin to provide Dynamic Theme for Ant Design",
-  "main": "index.js",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "test": "jest --config jestconfig.json src/__tests__",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "lint": "tslint -p tsconfig.json",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test && npm run lint",
+    "preversion": "npm run lint",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags",
     "deploy": "cd examples/customize-cra && npm run build && gh-pages -d build && cd ../../"
   },
   "dependencies": {
-    "antd-theme-generator": "^1.2.4"
+    "@types/less": "^3.0.1",
+    "@types/webpack": "^4.41.22",
+    "glob": "^7.1.3",
+    "hash.js": "^1.1.5",
+    "less": "^3.9.0",
+    "less-bundle-promise": "^1.0.7",
+    "less-plugin-npm-import": "^2.1.0",
+    "postcss": "^8.1.1",
+    "strip-css-comments": "^4.1.0"
   },
+  "peerDependencies": {
+    "postcss": "^8.1.1"
+  },
+  "files": [
+    "lib/**/*"
+  ],
   "author": {
     "name": "mzohaibqc",
     "url": "https://github.com/mzohaibqc"
@@ -28,8 +51,22 @@
     "dynamic-theme",
     "webpack"
   ],
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
-    "gh-pages": "^2.2.0"
+    "@types/glob": "^7.1.3",
+    "@types/jest": "^26.0.14",
+    "eslint": "^7.0.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "gh-pages": "^2.2.0",
+    "jest": "^26.5.2",
+    "prettier": "^2.1.2",
+    "ts-jest": "^26.4.1",
+    "tslint": "^6.1.3",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^4.0.3"
   }
 }

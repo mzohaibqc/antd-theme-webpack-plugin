@@ -19,7 +19,7 @@
   },
   "devDependencies": {
     "antd-theme-webpack-plugin": "^1.3.3",
-    "react-app-rewired": "^1.5.0"
+    "react-app-rewired": "^2.1.6"
   },
   "browserslist": [
     ">0.2%",
