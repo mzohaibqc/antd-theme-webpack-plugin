@@ -141,11 +141,6 @@ const ColorPreview = () => (
             <div className="name">@text-color-inverse</div>
           </div>
         </div>
-        <div className="color-item heading-color-dark">
-          <div className="color-item-content">
-            <div className="name">@heading-color-dark</div>
-          </div>
-        </div>
         <div className="color-item text-color-dark">
           <div className="color-item-content">
             <div className="name">@text-color-dark</div>

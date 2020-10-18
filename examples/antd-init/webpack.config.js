@@ -1,5 +1,5 @@
 const path = require('path');
-const AntDesignThemePlugin = require('antd-theme-webpack-plugin');
+const AntDesignThemePlugin = require('../../index');
 
 const options = {
   stylesDir: path.join(__dirname, './styles'),

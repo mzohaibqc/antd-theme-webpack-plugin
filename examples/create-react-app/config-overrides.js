@@ -1,7 +1,7 @@
 const path = require('path');
 const { injectBabelPlugin } = require('react-app-rewired');
 const rewireLess = require('react-app-rewire-less');
-const AntDesignThemePlugin = require('antd-theme-webpack-plugin');
+const AntDesignThemePlugin = require('../../index');
 
 const options = {
   stylesDir: path.join(__dirname, './src/less'),
