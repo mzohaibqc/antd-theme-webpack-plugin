@@ -8,7 +8,8 @@
     "deploy": "cd examples/customize-cra && npm run build && gh-pages -d build && cd ../../"
   },
   "dependencies": {
-    "antd-theme-generator": "^1.2.8"
+    "antd-theme-generator": "^1.2.8",
+    "webpack": "^5.12.3"
   },
   "author": {
     "name": "mzohaibqc",
