@@ -24,7 +24,7 @@ class AntDesignThemePlugin {
 
     if (version.startsWith('4.')) {
       compiler.hooks.emit.tapAsync(pluginName, (compilation, callback) =>
-        addAssets(compilation, compilation.assets, callback, '4'));
+        this.addAssets(compilation, compilation.assets, callback, '4'));
     }
     else {
       compiler.hooks.thisCompilation.tap(pluginName, (compilation) => {
