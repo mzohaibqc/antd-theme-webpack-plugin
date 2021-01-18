@@ -37,7 +37,6 @@ class AntDesignThemePlugin {
     else {
       compiler.hooks.emit.tapAsync(pluginName, (compilation, callback) =>
         this.addAssets(compilation, compilation.assets, callback));
-
     }
   }
 
@@ -73,15 +72,15 @@ class AntDesignThemePlugin {
 
       if (!content.match(/\/color\.less/g)) {
         const less = `
-        <link rel="stylesheet/less" type="text/css" href="${this.options.publicPath}/color.less" />
-        <script>
+          <link rel="stylesheet/less" type="text/css" href="${this.options.publicPath}/color.less" />
+          <script>
             window.less = {
-                async: false,
-                env: 'production'
+              async: false,
+              env: 'production'
             };
-        </script>
-        <script type="text/javascript" src="${this.options.lessUrl}"></script>
-    `;
+          </script>
+          <script type="text/javascript" src="${this.options.lessUrl}"></script>
+        `;
 
         const updatedContent = content.replace(less, "").replace(/<body>/gi, `<body>${less}`);
 
