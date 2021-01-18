@@ -17,33 +17,35 @@ class AntDesignThemePlugin {
     };
     this.options = Object.assign(defaultOptions, options);
     this.generated = false;
+    this.version = version;
   }
 
   apply(compiler) {
     const pluginName = 'AntDesignThemePlugin';
 
-    if (version.startsWith('4.')) {
-      compiler.hooks.emit.tapAsync(pluginName, (compilation, callback) =>
-        this.addAssets(compilation, compilation.assets, callback, '4'));
-    }
-    else {
+    if (this.version.startsWith('5.')) {
       compiler.hooks.thisCompilation.tap(pluginName, (compilation) => {
         compilation.hooks.processAssets.tapAsync(
           {
             name: pluginName,
             stage: Compilation.PROCESS_ASSETS_STAGE_SUMMARIZE
           },
-          (assets, callback) => this.addAssets(compilation, assets, callback, '5')
+          (assets, callback) => this.addAssets(compilation, assets, callback)
         );
       });
     }
+    else {
+      compiler.hooks.emit.tapAsync(pluginName, (compilation, callback) =>
+        this.addAssets(compilation, compilation.assets, callback));
+
+    }
   }
 
-  addAssets = (compilation, assets, callback, version) => {
-    this.generateIndexContent(assets, version, compilation);
+  addAssets = (compilation, assets, callback) => {
+    this.generateIndexContent(assets, compilation);
 
     if (this.options.generateOnce && this.colors) {
-      this.generateColorStylesheet(compilation, this.colors, version);
+      this.generateColorStylesheet(compilation, this.colors);
       return callback();
     }
 
@@ -52,7 +54,7 @@ class AntDesignThemePlugin {
         if (this.options.generateOnce) {
           this.colors = css;
         }
-        this.generateColorStylesheet(compilation, css, version);
+        this.generateColorStylesheet(compilation, css);
         callback();
       })
       .catch(err => {
@@ -61,7 +63,7 @@ class AntDesignThemePlugin {
 
   };
 
-  generateIndexContent = (assets, version, compilation) => {
+  generateIndexContent = (assets, compilation) => {
     if (
       this.options.indexFileName &&
       this.options.indexFileName in assets
@@ -83,25 +85,27 @@ class AntDesignThemePlugin {
 
         const updatedContent = content.replace(less, "").replace(/<body>/gi, `<body>${less}`);
 
-        if (version === '5') {
+        if (this.version.startsWith('5.')) {
           compilation.updateAsset(this.options.indexFileName, new sources.RawSource(updatedContent), { size: updatedContent.length });
-        } else {
-          index.source = () => updatedContent;
-          index.size = () => updatedContent.length;
+          return;
         }
+
+        index.source = () => updatedContent;
+        index.size = () => updatedContent.length;
       }
     }
   };
 
-  generateColorStylesheet = (compilation, source, version) => {
-    if (version === '5') {
+  generateColorStylesheet = (compilation, source) => {
+    if (this.version.startsWith('5.')) {
       compilation.emitAsset('color.less', new sources.RawSource(source), { size: source.length });
-    } else {
-      compilation.assets['color.less'] = {
-        source: () => source,
-        size: () => source.length
-      };
+      return;
     }
+
+    compilation.assets['color.less'] = {
+      source: () => source,
+      size: () => source.length
+    };
   };
 }
 
