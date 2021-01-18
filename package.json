@@ -11,13 +11,9 @@
     "antd-theme-generator": "^1.2.8",
     "webpack": "^5.12.3"
   },
-  "author": {
-    "name": "mzohaibqc",
-    "url": "https://github.com/mzohaibqc"
-  },
   "repository": {
     "type": "git",
-    "url": "git://github.com/mzohaibqc/antd-theme-webpack-plugin"
+    "url": "https://github.com/deliowales/antd-theme-webpack-plugin"
   },
   "keywords": [
     "antd",
