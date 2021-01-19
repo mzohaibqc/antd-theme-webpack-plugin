@@ -5,9 +5,9 @@ const path = require("path");
 class AntDesignThemePlugin {
   constructor(options) {
     const defaultOptions = {
-      varFile: path.join(__dirname, "../../src/styles/variables.less"),
-      antDir: path.join(__dirname, "../../node_modules/antd"),
-      stylesDir: path.join(__dirname, "../../src/styles/antd"),
+      varFile: path.join(__dirname, "../../../src/styles/variables.less"),
+      antDir: path.join(__dirname, "../../../node_modules/antd"),
+      stylesDir: path.join(__dirname, "../../../src/styles/antd"),
       themeVariables: ["@primary-color"],
       indexFileName: "index.html",
       generateOnce: false,
