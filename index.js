@@ -1,5 +1,5 @@
 const {generateTheme} = require("antd-theme-generator");
-const {webpack, Compilation, version} = require('webpack');
+const webpack = require('webpack');
 const {RawSource} = webpack.sources || require('webpack-sources');
 const path = require("path");
 
@@ -18,7 +18,7 @@ class AntDesignThemePlugin {
     };
     this.options = Object.assign(defaultOptions, options);
     this.generated = false;
-    this.version = version;
+    this.version = webpack.version;
   }
 
   apply(compiler) {
@@ -29,7 +29,7 @@ class AntDesignThemePlugin {
         compilation.hooks.processAssets.tapAsync(
           {
             name: pluginName,
-            stage: Compilation.PROCESS_ASSETS_STAGE_SUMMARIZE
+            stage: webpack.Compilation.PROCESS_ASSETS_STAGE_SUMMARIZE
           },
           (assets, callback) => this.addAssets(compilation, assets, callback)
         );
