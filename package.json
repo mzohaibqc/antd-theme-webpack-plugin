@@ -9,7 +9,10 @@
   },
   "dependencies": {
     "antd-theme-generator": "^1.2.8",
-    "webpack": "^5.12.3"
+    "webpack-sources": "^2.2.0"
+  },
+  "peerDependencies": {
+    "webpack": "^4.4.0 || ^5.4.0"
   },
   "author": {
     "name": "mzohaibqc",

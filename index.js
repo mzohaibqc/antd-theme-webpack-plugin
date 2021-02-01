@@ -1,5 +1,6 @@
 const {generateTheme} = require("antd-theme-generator");
-const {sources, Compilation, version} = require('webpack');
+const {webpack, Compilation, version} = require('webpack');
+const {RawSource} = webpack.sources || require('webpack-sources');
 const path = require("path");
 
 class AntDesignThemePlugin {
@@ -85,7 +86,7 @@ class AntDesignThemePlugin {
         const updatedContent = content.replace(less, "").replace(/<body>/gi, `<body>${less}`);
 
         if (this.version.startsWith('5.')) {
-          compilation.updateAsset(this.options.indexFileName, new sources.RawSource(updatedContent), { size: updatedContent.length });
+          compilation.updateAsset(this.options.indexFileName, new RawSource(updatedContent), { size: updatedContent.length });
           return;
         }
 
@@ -97,7 +98,7 @@ class AntDesignThemePlugin {
 
   generateColorStylesheet = (compilation, source) => {
     if (this.version.startsWith('5.')) {
-      compilation.emitAsset('color.less', new sources.RawSource(source), { size: source.length });
+      compilation.emitAsset('color.less', new RawSource(source), { size: source.length });
       return;
     }
 
