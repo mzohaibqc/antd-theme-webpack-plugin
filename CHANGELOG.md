@@ -1,7 +1,9 @@
 # Changelog
 This document contains changes in this plugin with each version change.
+## [1.3.8] - 2021-02-05 (latest)
+Added support for webpack@5.0.0
 
-## [1.3.7] - 2020-10-18 (latest)
+## [1.3.7] - 2020-10-18
 Fixed a bug. input box-shadow color was generated different for every build due to `fade()`, fixed now. Fixed slider handle active color
 Fixed following bug:
 https://github.com/mzohaibqc/antd-theme-webpack-plugin/issues/69
