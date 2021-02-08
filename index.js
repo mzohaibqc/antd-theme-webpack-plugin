@@ -1,13 +1,14 @@
 const {generateTheme} = require("antd-theme-generator");
-const {sources, Compilation, version} = require('webpack');
+const webpack = require('webpack');
+const {RawSource} = webpack.sources || require('webpack-sources');
 const path = require("path");
 
 class AntDesignThemePlugin {
   constructor(options) {
     const defaultOptions = {
-      varFile: path.join(__dirname, "../../../src/styles/variables.less"),
-      antDir: path.join(__dirname, "../../../node_modules/antd"),
-      stylesDir: path.join(__dirname, "../../../src/styles/antd"),
+      varFile: path.join(__dirname, "../../src/styles/variables.less"),
+      antDir: path.join(__dirname, "../../node_modules/antd"),
+      stylesDir: path.join(__dirname, "../../src/styles/antd"),
       themeVariables: ["@primary-color"],
       indexFileName: "index.html",
       generateOnce: false,
@@ -17,7 +18,7 @@ class AntDesignThemePlugin {
     };
     this.options = Object.assign(defaultOptions, options);
     this.generated = false;
-    this.version = version;
+    this.version = webpack.version;
   }
 
   apply(compiler) {
@@ -28,7 +29,7 @@ class AntDesignThemePlugin {
         compilation.hooks.processAssets.tapAsync(
           {
             name: pluginName,
-            stage: Compilation.PROCESS_ASSETS_STAGE_SUMMARIZE
+            stage: webpack.Compilation.PROCESS_ASSETS_STAGE_SUMMARIZE
           },
           (assets, callback) => this.addAssets(compilation, assets, callback)
         );
@@ -37,11 +38,10 @@ class AntDesignThemePlugin {
     else {
       compiler.hooks.emit.tapAsync(pluginName, (compilation, callback) =>
         this.addAssets(compilation, compilation.assets, callback));
-
     }
   }
 
-  addAssets = (compilation, assets, callback) => {
+  addAssets(compilation, assets, callback) {
     this.generateIndexContent(assets, compilation);
 
     if (this.options.generateOnce && this.colors) {
@@ -63,7 +63,7 @@ class AntDesignThemePlugin {
 
   };
 
-  generateIndexContent = (assets, compilation) => {
+  generateIndexContent(assets, compilation) {
     if (
       this.options.indexFileName &&
       this.options.indexFileName in assets
@@ -73,20 +73,20 @@ class AntDesignThemePlugin {
 
       if (!content.match(/\/color\.less/g)) {
         const less = `
-        <link rel="stylesheet/less" type="text/css" href="${this.options.publicPath}/color.less" />
-        <script>
+          <link rel="stylesheet/less" type="text/css" href="${this.options.publicPath}/color.less" />
+          <script>
             window.less = {
-                async: false,
-                env: 'production'
+              async: false,
+              env: 'production'
             };
-        </script>
-        <script type="text/javascript" src="${this.options.lessUrl}"></script>
-    `;
+          </script>
+          <script type="text/javascript" src="${this.options.lessUrl}"></script>
+        `;
 
         const updatedContent = content.replace(less, "").replace(/<body>/gi, `<body>${less}`);
 
         if (this.version.startsWith('5.')) {
-          compilation.updateAsset(this.options.indexFileName, new sources.RawSource(updatedContent), { size: updatedContent.length });
+          compilation.updateAsset(this.options.indexFileName, new RawSource(updatedContent), { size: updatedContent.length });
           return;
         }
 
@@ -96,9 +96,9 @@ class AntDesignThemePlugin {
     }
   };
 
-  generateColorStylesheet = (compilation, source) => {
+  generateColorStylesheet(compilation, source) {
     if (this.version.startsWith('5.')) {
-      compilation.emitAsset('color.less', new sources.RawSource(source), { size: source.length });
+      compilation.emitAsset('color.less', new RawSource(source), { size: source.length });
       return;
     }
 
