@@ -7,7 +7,7 @@
   },
   "dependencies": {
     "antd": "^3.2.3",
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "babel-polyfill": "^6.26.0",
     "dva": "^2.1.0",
     "dva-loading": "^1.0.4",
