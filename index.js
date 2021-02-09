@@ -41,7 +41,7 @@ class AntDesignThemePlugin {
     }
   }
 
-  addAssets = (compilation, assets, callback) => {
+  addAssets(compilation, assets, callback) {
     this.generateIndexContent(assets, compilation);
 
     if (this.options.generateOnce && this.colors) {
@@ -63,7 +63,7 @@ class AntDesignThemePlugin {
 
   };
 
-  generateIndexContent = (assets, compilation) => {
+  generateIndexContent(assets, compilation) {
     if (
       this.options.indexFileName &&
       this.options.indexFileName in assets
@@ -96,7 +96,7 @@ class AntDesignThemePlugin {
     }
   };
 
-  generateColorStylesheet = (compilation, source) => {
+  generateColorStylesheet(compilation, source) {
     if (this.version.startsWith('5.')) {
       compilation.emitAsset('color.less', new RawSource(source), { size: source.length });
       return;
