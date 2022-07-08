@@ -13,7 +13,7 @@
     "dva-loading": "^1.0.4",
     "flex.css": "^1.1.7",
     "lodash": "^4.17.5",
-    "moment": "^2.21.0",
+    "moment": "^2.29.4",
     "path-to-regexp": "^2.1.0",
     "prop-types": "^15.6.1",
     "qs": "^6.5.1",
