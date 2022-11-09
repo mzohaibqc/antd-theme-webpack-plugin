@@ -9,7 +9,7 @@
     "react-app-rewire-less": "^2.1.1",
     "react-color": "^2.14.1",
     "react-dom": "^16.3.2",
-    "react-scripts": "^2.1.1"
+    "react-scripts": "^5.0.1"
   },
   "scripts": {
     "start": "react-app-rewired start",
