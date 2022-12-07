@@ -16,7 +16,7 @@
     "moment": "^2.21.0",
     "path-to-regexp": "^2.1.0",
     "prop-types": "^15.6.1",
-    "qs": "^6.5.1",
+    "qs": "^6.5.3",
     "query-string": "^5.1.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0"
