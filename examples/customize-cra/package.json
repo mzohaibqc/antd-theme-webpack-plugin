@@ -8,13 +8,13 @@
     "babel-plugin-import": "^1.13.0",
     "customize-cra": "^0.9.1",
     "less": "^3.11.1",
-    "less-loader": "^5.0.0",
+    "less-loader": "^11.1.0",
     "react": "^16.13.1",
     "react-app-rewired": "^2.1.5",
     "react-color": "^2.18.1",
     "react-dom": "^16.13.1",
     "react-responsive": "^8.0.3",
-    "react-scripts": "^3.4.4"
+    "react-scripts": "^5.0.1"
   },
   "scripts": {
     "start": "react-app-rewired start",
